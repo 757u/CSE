@@ -1,4 +1,5 @@
-# print("Hello world")
+import random
+ # print("Hello world")
 #
 # # Jazmin
 #
@@ -92,6 +93,35 @@ def grade_calc(percentage) :
 
 print(grade_calc(25))
 
+'''Write a function called "happy-birthday"
+that "sings" (prints) Happy birthday
+
+It must take one parameter called "name"'''
 
 
+def happy_bday(name):
+    print("Happy Birthday")
+    print("Happy Birthday to you")
+    print("Happy Birthday dear computer")
+    print("Happy Birthday to you")
+
+happy_bday("computer")
+
+
+# Loops
+
+for num in  range(10):
+    print(num + 1)
+
+# While Loops (BEWARE!!!!!!)
+
+a = 1
+while a < 10: #This is the condition, it must be true to execute,
+              # it must be true to execute
+    print(a)
+    a += 1  #This iterates so that we can break the loop
+
+# Random Numbers
+import random # This should be on line 1
+print(random.randint(0,1000))
 
