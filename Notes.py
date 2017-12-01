@@ -124,4 +124,3 @@ while a < 10: #This is the condition, it must be true to execute,
 # Random Numbers
 import random # This should be on line 1
 print(random.randint(0,1000))
-
