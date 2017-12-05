@@ -124,3 +124,16 @@ while a < 10: #This is the condition, it must be true to execute,
 # Random Numbers
 import random # This should be on line 1
 print(random.randint(0,1000))
+
+c = '1'
+print(c == 1) # we have a string and an inte
+print(int(c) == 1)
+print(c == str(1))
+
+
+
+# Complarisons
+
+print(1 == 1) # Use a double equal sign
+print(1 != 2) # 1 is not equal to 2
+print(not False) # "1" is the "not" operator
