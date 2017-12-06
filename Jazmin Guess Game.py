@@ -6,13 +6,20 @@ guess = int(input("What is your guess?"))  # str
 correct_guess = False
 
 while turns_left > 0 and correct_guess == False:
-if guess == answer:
+ if guess == answer:
     print("You win!")
     correct_guess = True
-elif guess > answer:
+ elif guess > answer:
     print("Too high!")
     guess = int(input("Guess again"))
     turns_left -= 1
+ elif guess < answer:
+    print("Too low!")
+    guess = int(input("Guess again"))
+
+
+
+
 
 
 
