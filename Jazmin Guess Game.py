@@ -1,4 +1,6 @@
 import random
+
+# Initializing variables
 answer = random.randint(1,50)
 print(answer)
 turns_left = 5
@@ -6,6 +8,7 @@ guess = int(input("What is your guess?"))  # str
 turns_left -= 1
 correct_guess = False
 
+# Describe ONE turn and (This is the game's controller)
 while turns_left > 0 and correct_guess == False:
  if guess == answer:
     print("You win!")
@@ -35,7 +38,7 @@ while turns_left > 0 and correct_guess == False:
 # Does the guess match the number?
 # Add "Higher and "Lower"
 # Add 5 guesses
-
+#
 
 
 
