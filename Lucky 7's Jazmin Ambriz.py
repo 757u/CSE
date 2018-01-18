@@ -28,4 +28,4 @@ def bet(money, rounds, highest_amout_money, highest_round):
                 "Your highest amount of money was $%d in round number %d." % (rounds, highest_amout_money, highest_round))
 
 
-bet(0, 0, 15, 0, 0, 0)
+bet(15, 0, 15, 0)
