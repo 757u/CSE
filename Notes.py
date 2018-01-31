@@ -121,7 +121,7 @@
 #     print(a)
 #     a += 1  #This iterates so that we can break the loop
 #
-# # Random Numbers
+# Random Numbers
 # import random # This should be on line 1
 # print(random.randint(0,1000))
 #
@@ -164,4 +164,46 @@ range(len(cheesburger_ingredients))  # Generates a list of all indices
 for num in range(len(cheesburger_ingredients)):
     item = cheesburger_ingredients[num]
     print("The item at index %d is %s" % (num, item))
-    
+
+
+cheesburger_ingredients.append("lettuce")
+print(cheesburger_ingredients)
+
+# Recasting into a list
+strOne = "Hello World!"
+listOne = list (strOne)
+print(listOne)
+listOne[11] = '.'
+print(listOne[-1])
+
+# Adding things to a list
+cheesburger_ingredients.append("Fries")
+print(cheesburger_ingredients)
+
+# Remove things from a list
+cheesburger_ingredients.pop(1)
+print(cheesburger_ingredients)
+cheesburger_ingredients.remove("cheese")
+print(cheesburger_ingredients)
+
+# Getting the alphabet
+import string
+print(string.ascii_letters)
+print(string.ascii_lowercase)
+print(string.punctuation)
+
+
+# Making things Lowercase
+strTwo = "ThIs Is A VeRy oDD sEnTENcE"
+lowercase = strTwo.lower()
+print(lowercase)
+
+
+
+
+
+#list of letters a person has guesses so far
+
+L1 = ["H", "e", "l", "l", "o"]
+"".join(L1)
+print(L1)

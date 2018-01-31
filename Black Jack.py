@@ -16,14 +16,3 @@ def Blackjack():
 Blackjack(0,0)
 
 def game(player_card1, player_card2, dealers_card1, dealers_card2, players_value,dealers_value):
-
-
-
-
-
-
-
-
-
-
-
