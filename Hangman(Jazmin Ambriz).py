@@ -28,7 +28,7 @@ guess_left = 10
 
 
 
-list_of_letters_guessed_by_player = []
+list_of_letters_guessed_by_player = ['']
 
 player_letter = ""
 while guess_left > 1:
