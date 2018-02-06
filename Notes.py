@@ -137,73 +137,159 @@
 # print(1 == 1) # Use a double equal sign to compare
 # print(1 != 2) # 1 is not equal to 2. used to show that something is false.
 # print(not False) # "1" is the "not" operator
+#
+#
+#
+#
+# # Lists
+#
+# the_count = [1, 2, 3, 4, 5]
+# cheesburger_ingredients = ['cheese', "beef", "sauce", "sesame seed bun", "avocado", "onion"]
+# print(cheesburger_ingredients[0])
+# print(cheesburger_ingredients[3])
+# print(len(cheesburger_ingredients))
+# print(len(the_count))
+#
+# # Going through lists
+# for item in cheesburger_ingredients:      # for loops are used when you the exact number of time that something is going through
+#     print(item)
+#
+# for number in the_count:
+#     print(number * 2)                     # " * " is the times sign x
+#
+# length = len(cheesburger_ingredients)
+# range(5)     # A list of the numbers 0 through 4
+# range(len(cheesburger_ingredients))  # Generates a list of all indices
+#
+# for num in range(len(cheesburger_ingredients)):
+#     item = cheesburger_ingredients[num]
+#     print("The item at index %d is %s" % (num, item))
+#
+#
+# cheesburger_ingredients.append("lettuce")
+# print(cheesburger_ingredients)
+#
+# # Recasting into a list
+# strOne = "Hello World!"
+# listOne = list (strOne)
+# print(listOne)
+# listOne[11] = '.'
+# print(listOne[-1])
+#
+# # Adding things to a list
+# cheesburger_ingredients.append("Fries")
+# print(cheesburger_ingredients)
+#
+# # Remove things from a list
+# cheesburger_ingredients.pop(1)
+# print(cheesburger_ingredients)
+# cheesburger_ingredients.remove("cheese")
+# print(cheesburger_ingredients)
+#
+# # Getting the alphabet
+# import string
+# print(string.ascii_letters)
+# print(string.ascii_lowercase)
+# print(string.punctuation)
+#
+#
+# # Making things Lowercase
+# strTwo = "ThIs Is A VeRy oDD sEnTENcE"
+# lowercase = strTwo.lower()
+# print(lowercase)
+#
+#
+#
+#
+#
+# #list of letters a person has guesses so far
+#
+# L1 = ["H", "e", "l", "l", "o"]
+# "".join(L1)
+# print(L1)
 
 
+# Dictionaries - Made up of key: value pair
+
+dictionary = {"name": 'Lance', 'age': 26, 'height': 6 * 12 + 2}
+
+# Accessing things from a dictionary
+print(dictionary['name'])
+print(dictionary['age'])
+print(dictionary['height'])
+
+# Add a pair to a dictionary
+dictionary["proffesion"] = "telemarketer"
+
+large_dictionary = {
+    'CA': 'California',
+    'AZ': 'Arizona',
+    'NY': 'New York'
+}
+print(large_dictionary['NY'])
+larger_dictionary = {
+    'CA': 'California',
+    'AZ': 'Arizona',
+    'NY': 'New York'
+}
+print(large_dictionary['NY'])
 
 
-# Lists
+larger_dictionary = {
+    'CA': [
+        'Fresno',
+        "San Francisco",
+        "San Jose"
 
-the_count = [1, 2, 3, 4, 5]
-cheesburger_ingredients = ['cheese', "beef", "sauce", "sesame seed bun", "avocado", "onion"]
-print(cheesburger_ingredients[0])
-print(cheesburger_ingredients[3])
-print(len(cheesburger_ingredients))
-print(len(the_count))
+    ],
+    'Az':[
+        "Phoenix",
+        "TusCon"
+    ],
+    'NY': [
+        "New York City",
+        "Brooklyn",
+    ]
+}
+print(larger_dictionary['NY'])
+print(larger_dictionary['NY'][1])
+print(larger_dictionary)
+print(larger_dictionary ['Az'][0])
 
-# Going through lists
-for item in cheesburger_ingredients:      # for loops are used when you the exact number of time that something is going through
-    print(item)
+largest_dictionary = {
+    'CA':{
+        'NAME': 'California',
+        'POPULATION': 39250000,
+        'BORDER ST': [
+            'Oregon',
+            'Nevada',
+            'Arizona',
 
-for number in the_count:
-    print(number * 2)                     # " * " is the times sign x
+        ]
+    },
+    'AZ':{
+        'NAME': 'Arizona',
+        'POPULATION': 6931000,
+        'BORDER ST': [
+            'California',
+            'Utah',
+            'Nevada',
+            'New Mexico',
+        ]
+    },
+    'NY':{
+        'NAME': "New York",
+        'POPULATION': 19750000,
+        'BORDER ST': [
+            'Vermont',
+            'Massachusetts'
+            'Connecticut',
+            'Pennsylvania',
+            'New Jersey'
+        ]
+    },
 
-length = len(cheesburger_ingredients)
-range(5)     # A list of the numbers 0 through 4
-range(len(cheesburger_ingredients))  # Generates a list of all indices
+}
 
-for num in range(len(cheesburger_ingredients)):
-    item = cheesburger_ingredients[num]
-    print("The item at index %d is %s" % (num, item))
-
-
-cheesburger_ingredients.append("lettuce")
-print(cheesburger_ingredients)
-
-# Recasting into a list
-strOne = "Hello World!"
-listOne = list (strOne)
-print(listOne)
-listOne[11] = '.'
-print(listOne[-1])
-
-# Adding things to a list
-cheesburger_ingredients.append("Fries")
-print(cheesburger_ingredients)
-
-# Remove things from a list
-cheesburger_ingredients.pop(1)
-print(cheesburger_ingredients)
-cheesburger_ingredients.remove("cheese")
-print(cheesburger_ingredients)
-
-# Getting the alphabet
-import string
-print(string.ascii_letters)
-print(string.ascii_lowercase)
-print(string.punctuation)
-
-
-# Making things Lowercase
-strTwo = "ThIs Is A VeRy oDD sEnTENcE"
-lowercase = strTwo.lower()
-print(lowercase)
-
-
-
-
-
-#list of letters a person has guesses so far
-
-L1 = ["H", "e", "l", "l", "o"]
-"".join(L1)
-print(L1)
+current_node = largest_dictionary['NY']
+print(current_node['POPULATION'])

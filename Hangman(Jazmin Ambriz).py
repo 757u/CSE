@@ -22,13 +22,13 @@ import random
 word_bank = ["Afghanistan", "Bosnia and Herzegovina", "Central African Republic", "Djibouti", "Equatorial Guinea",
              "Hungary", "Luxembourg", "Mozambique", "Switzerland", "Ukraine"]
 word = random.choice(word_bank).lower()
-print(word)
+# print(word)
 # guess = 10
 guess_left = 10
 
 
 
-list_of_letters_guessed_by_player = ['']
+list_of_letters_guessed_by_player = [' ']
 
 player_letter = ""
 while guess_left > 1:
@@ -55,3 +55,5 @@ while guess_left > 1:
     list_of_letters_guessed_by_player.append(player_letter)
     print(list_of_letters_guessed_by_player)
 print(" You Lost")
+print("The word was:")
+print(word)
