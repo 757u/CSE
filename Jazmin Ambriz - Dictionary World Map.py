@@ -32,7 +32,32 @@ world_map = {
     },
     'SOUTHEAST OF GARDEN': {
         'NAME': 'Front of House',
-        'DESCRIPTION': 'Black two story house, '
+        'DESCRIPTION': 'Black two story house, with two white windows in front.',
+
+    'PATHS': {
+        'NORTH': 'Inside of House',
+        'SOUTH': 'Dangerous Forest',
+        }
+    },
+    'INSIDE HOUSE':{
+        'NAME': 'INSIDE THE HOUSE',
+        'DESCRIPTION': 'You are inside a two story house; standing at the beginning of a corridor. Around you there'
+                       ' are different rooms and doors leading to the yet unknown. To the side a bit to the east there'
+                       ' is a fancy staircase leading to the second floor.',
+        'PATHS': {
+            'UP': 'Second floor',
+            'NORTH': 'Inside Pool',
+            'NORTHWEST': 'Kitchen',
+            'EAST': 'Living room',
+            'NORTHEAST': 'Bedroom'
+        }
+    },
+    'SWIMMING POOL':{
+        'NAME': 'Inside Pool',
+        'DESCRIPTION': 'Big rectangular pool with crystal water, the bottom can not be seen because of its deepness, '
+                       'inside the pool there are infinite steps leading down to the bottom of the pool (if there is a'
+                       'bottom).'
+
     }
 
 }
@@ -49,7 +74,7 @@ while True:
     if command in directions:
         try:
             name_of_node = current_node['PATHS'][command]
-            print(name_of_node)
+            current_node = world_map[name_of_node]
         except KeyError:
             print("You cannot go this way")
     else:
