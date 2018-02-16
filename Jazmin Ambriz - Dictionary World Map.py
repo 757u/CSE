@@ -12,7 +12,8 @@ world_map = {
                        ' door leading to the garden ',
         'PATHS': {
             'EAST': 'LIVING',
-            'WEST': 'GARDEN'
+            'WEST': 'GARDEN',
+            'NORTH': 'Old room'
         }
     },
     'GARDEN': {
@@ -39,7 +40,7 @@ world_map = {
         'SOUTH': 'Dangerous Forest',
         }
     },
-    'INSIDE HOUSE':{
+    'INSIDE HOUSE': {
         'NAME': 'INSIDE THE HOUSE',
         'DESCRIPTION': 'You are inside a two story house; standing at the beginning of a corridor. Around you there'
                        ' are different rooms and doors leading to the yet unknown. To the side a bit to the east there'
@@ -49,16 +50,45 @@ world_map = {
             'NORTH': 'Inside Pool',
             'NORTHWEST': 'Kitchen',
             'EAST': 'Living room',
-            'NORTHEAST': 'Bedroom'
+            'NORTHEAST': 'Bedroom',
+
         }
     },
-    'SWIMMING POOL':{
+    'SWIMMING POOL': {
         'NAME': 'Inside Pool',
         'DESCRIPTION': 'Big rectangular pool with crystal water, the bottom can not be seen because of its deepness, '
                        'inside the pool there are infinite steps leading down to the bottom of the pool (if there is a'
-                       'bottom).'
+                       'bottom).',
+        'PATHS:': {
+            'EAST': 'Big bathroom',
+            'SOUTHEAST': 'Bedroom'
 
-    }
+        }
+
+    },
+    'BIG BATHROOM': {
+        'NAME': 'Big bathroom',
+        'DESCRIPTION': 'You are now east of the pool inside a gigantic bathroom, this bathroom is very antique, and it '
+                       'is also very unique.',
+        'PATHS': {
+            'SOUTH': 'Bedroom',
+            'SOUTHEAST': 'Living room',
+            'Southwest': 'Brick wall'
+        }
+    },
+    'BEDROOM': {
+        'NAME': 'Bedroom',
+        'DESCRIPTION': 'Inside the bedroom there is a bed with two small drawers by the sides. In the south wall of the'
+                       'room there is a build in closet. At the northeast corner'
+                       'of the room there is a small bathroom. Inside the bathroom there is an open window leading to '
+                       'the outside east of the house. ',
+        'PATHS': {
+            'WEST': 'Brick wall',
+            'SOUTH': 'Front door',
+            'NORTH': 'Inside pool',
+            'SOUTHEAST': 'Living room'
+        }
+    },
 
 }
 current_node = world_map['LIVING']
