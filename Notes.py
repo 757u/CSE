@@ -141,15 +141,15 @@
 #
 #
 #
-# # Lists
-#
-# the_count = [1, 2, 3, 4, 5]
-# cheesburger_ingredients = ['cheese', "beef", "sauce", "sesame seed bun", "avocado", "onion"]
-# print(cheesburger_ingredients[0])
-# print(cheesburger_ingredients[3])
-# print(len(cheesburger_ingredients))
-# print(len(the_count))
-#
+# Lists
+
+the_count = [1, 2, 3, 4, 5]
+cheesburger_ingredients = ['cheese', "beef", "sauce", "sesame seed bun", "avocado", "onion"]
+print(cheesburger_ingredients[0])
+print(cheesburger_ingredients[3])
+print(len(cheesburger_ingredients))
+print(len(the_count))
+
 # # Going through lists
 # for item in cheesburger_ingredients:      # for loops are used when you the exact number of time that something is going through
 #     print(item)
