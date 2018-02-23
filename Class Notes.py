@@ -58,7 +58,7 @@ class car(object):
             print("The car is already off")
 
     def go_for_drive(self, passenger):
-        print("%d passangers get in." % passenger)
+        print("%d passengers get in." % passenger)
         self.passengers = passenger
         self.turn_on()
         self.move_forward()
