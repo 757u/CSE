@@ -52,25 +52,34 @@ Bedroom = Room("Bedroom", None, "Inside Pool", "Front Door", None, "Brick Wall",
                " bathroom there is an open window leading to the outside east of the house.")
 Second_Floor = Room("Up stairs", None,  )
 
-Library = Room("Library", None)
+Library = Room("Library", None, "The Library room is filled with row ad rows of books of all kind. Books that you have"
+                                " never imagined; they are a bit dusty as if no one has touched them in years.")
 
+Special_Room = Room("Second Floor Bedroom", None, None, "Back to staircase", "You are standing in a very typical room,"
+                    "there is a bed, some lamps by the sides books on the floor. To the north wall there is an open"
+                    "window. But then you notice one of the weirdest things; part of the floor is glass allowing you to"
+                    " see down and take alook at the pool. You are not sure if the glass is very stable.")
 
-
-
+Gym = Room("Library", "The gym is weird shaped. It is found at the northwest corner of the house. Instead of being a"
+                      " regular rectangular shape building it is half circle.")
 
 
 
 
 current_node = hdum
-directions = ['north', 'south', 'east', 'west']
+directions = ['north', 'south', 'east', 'west', 'southeast', 'southwest', 'northeast', 'northwest']
+short_directions = ['n', 's', 'e', 'w', 'se', 'sw', 'ne', 'nw']
 
 while True:
-    print(current_node['name'])   # change
-    print(current_node['descriptions'])   # change
+    print(current_node.name)   # change
+    print(current_node.descriptions)   # change
 
-    command = input('>_')
+    command = input('>_').lower().strip()
     if command == 'quit':
         quit(0)
+    elif command in short_directions:
+        pos = short_directions.index(command)
+        command = directions[pos]
     if command in directions:
         try:
             name_of_node = current_node['PATHS'][command]
