@@ -50,23 +50,33 @@ Bedroom = Room("Bedroom", None, "Inside Pool", "Front Door", None, "Brick Wall",
                "Inside the bedroom there is a bed with two small drawers by the sides. In the south wall of the room"
                "there is a build in closet. At the northeast corner of the room there is a small bathroom. Inside the"
                " bathroom there is an open window leading to the outside east of the house.")
-Second_Floor = Room("Up stairs", None,  )
 
-Library = Room("Library", None, "The Library room is filled with row ad rows of books of all kind. Books that you have"
-                                " never imagined; they are a bit dusty as if no one has touched them in years.")
+Second_Floor = Room("Up stairs", None, "You are up stairs in the second floor, This floor looks very similar to the"
+                   "first floor just with different room that you are about to discover (Only if you are willing to).")
 
-Special_Room = Room("Second Floor Bedroom", None, None, "Back to staircase", "You are standing in a very typical room,"
-                    "there is a bed, some lamps by the sides books on the floor. To the north wall there is an open"
+Library = Room("Library", None, "Hallway", None, None, "Staircase", None, None, "(FIRST) Single bedroom",
+               "Second Floor Bedroom", "The Library room is filled with row and rows of books of all kinds. Books that"
+               "you have never imagined; they are a bit dusty as if no one has touched them in years.")
+
+Special_Room = Room("Second Floor Bedroom", None, None, "Staircase", None, "Waiting Room", "Library",
+                    "Waiting Room", "Hallway", None, "You are standing in a very typical room,"
+                    "there is a bed, some lamps by the sides, books on the floor. To the north wall there is an open"
                     "window. But then you notice one of the weirdest things; part of the floor is glass allowing you to"
-                    " see down and take alook at the pool. You are not sure if the glass is very stable.")
+                    " see down and take a look at the pool. You are not sure if the glass is very stable.")
 
-Gym = Room("Library", "The gym is weird shaped. It is found at the northwest corner of the house. Instead of being a"
+Gym = Room("Gym", None, "Back Gym wall", "Office", "Second Floor Bedroom", "Waiting Room", "Library", "Waiting Room", None,
+           "Gym", "The gym is weird shaped. It is found at the northwest corner of the house. Instead of being a"
                       " regular rectangular shape building it is half circle.")
+Office = Room("Office", None, "Gym", None, "Staircase", "Waiting Room", None, None, "Library", "Waiting Room", "You are"
+              "in a room that looks like an office. This room has a desk, an old computer, and some bookshelf.")
+
+Waiting_Room = Room("Waiting Room", None, "Gym", "Office", "Library", None, "Office", None, "Second Floor Bedroom",
+                    None, "You find yourself in a small lobby next to an office. The Waiting room or lobby")
 
 
 
 
-current_node = hdum
+current_node = Southeast_of_Garden
 directions = ['north', 'south', 'east', 'west', 'southeast', 'southwest', 'northeast', 'northwest']
 short_directions = ['n', 's', 'e', 'w', 'se', 'sw', 'ne', 'nw']
 
@@ -82,8 +92,7 @@ while True:
         command = directions[pos]
     if command in directions:
         try:
-            name_of_node = current_node['PATHS'][command]
-            current_node = world_map[name_of_node]
+
         except KeyError:
             print("You cannot go this way")
     else:
