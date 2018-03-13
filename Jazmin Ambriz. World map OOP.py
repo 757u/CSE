@@ -92,8 +92,7 @@ while True:
         command = directions[pos]
     if command in directions:
         try:
-
-        except KeyError:
+            except KeyError:
             print("You cannot go this way")
     else:
         print("Command not recognize")

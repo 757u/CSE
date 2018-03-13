@@ -89,6 +89,25 @@ world_map = {
             'SOUTHEAST': 'Living room'
         }
     },
+    'SECOND FLOOR': {
+        'NAME': 'Second Floor',
+        'DESCRIPTION': 'You are up stairs in the second floor, This floor looks very similar to the first floor just'
+                        'with different room that you are about to discover (Only if you are willing to).',
+        'PATHS': {
+            'WEST': '...'
+        }
+    },
+    'LIBRARY': {
+        'NAME': 'Library',
+        'DESCRIPTION': 'The Library room is filled with row and rows of books of all kinds. Books that you have never'
+                       'imagined; they are a bit dusty as if no one has touched them in years.',
+        'PATHS': {
+            'NORTH': 'Hallway',
+            'WEST': 'Staircase',
+            'NORTHEAST': '(First) Single Bedroom'
+            ''
+        }
+    }
 
 }
 current_node = world_map['LIVING']
