@@ -15,10 +15,11 @@ class Employee(Person):
     def walk(self):
         print("You are walking to your job station")
 
+
 class Programmer(Employee):
     def __init__(self, name, age, job, degree_of_knowledge):
-        super(Programmer, self).__init__(name, age,job)
-        self.deggree_of_knowlege = degree_of_knowledge
+        super(Programmer, self).__init__(name, age, job)
+        self.degree_of_knowledge = degree_of_knowledge
 
-    def start_Programming(self):
+    def start_programming(self):
         print("You are at your job, and you are beginning to program")

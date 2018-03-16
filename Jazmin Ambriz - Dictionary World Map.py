@@ -107,7 +107,8 @@ world_map = {
             'NORTHEAST': '(First) Single Bedroom'
             ''
         }
-    }
+    },
+    'Special Room': ''
 
 }
 current_node = world_map['LIVING']
