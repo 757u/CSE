@@ -35,9 +35,9 @@ world_map = {
         'NAME': 'Front of House',
         'DESCRIPTION': 'Black two story house, with two white windows in front.',
 
-    'PATHS': {
-        'NORTH': 'Inside of House',
-        'SOUTH': 'Dangerous Forest',
+        'PATHS': {
+            'NORTH': 'Inside of House',
+            'SOUTH': 'Dangerous Forest',
         }
     },
     'INSIDE HOUSE': {
@@ -92,7 +92,7 @@ world_map = {
     'SECOND FLOOR': {
         'NAME': 'Second Floor',
         'DESCRIPTION': 'You are up stairs in the second floor, This floor looks very similar to the first floor just'
-                        'with different room that you are about to discover (Only if you are willing to).',
+                       'with different room that you are about to discover (Only if you are willing to).',
         'PATHS': {
             'WEST': '...'
         }

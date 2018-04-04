@@ -14,41 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Function Notes.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Function Notes.py">
+      <file leaf-file-name="Items.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Items.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="43" lean-forward="false" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Inherentance notes.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Inherentance notes.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="52" column="21" lean-forward="false" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Programmer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Programmer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Class Notes.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Class Notes.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+            <state relative-caret-position="481">
+              <caret line="169" column="0" lean-forward="false" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -57,28 +27,38 @@
       <file leaf-file-name="Jazmin Ambriz- Characters(google.classroom).py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Jazmin Ambriz- Characters(google.classroom).py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="82">
+              <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Items.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Items.py">
+      <file leaf-file-name="Jazmin Ambriz - Dictionary World Map.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Jazmin Ambriz - Dictionary World Map.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+            <state relative-caret-position="-1291">
+              <caret line="39" column="12" lean-forward="false" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Jazmin Ambriz - Characters.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Jazmin Ambriz - Characters.py">
+      <file leaf-file-name="Jazmin Ambriz. World map OOP.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Jazmin Ambriz. World map OOP.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+            <state relative-caret-position="549">
+              <caret line="98" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Jazmin A - CYOA.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Jazmin A - CYOA.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="227" column="8" lean-forward="true" selection-start-line="227" selection-start-column="8" selection-end-line="227" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -114,11 +94,13 @@
         <option value="$PROJECT_DIR$/Class Notes.py" />
         <option value="$PROJECT_DIR$/Jazmin Ambriz - Characters.py" />
         <option value="$PROJECT_DIR$/Jazmin Ambriz- Characters(google.classroom).py" />
-        <option value="$PROJECT_DIR$/Jazmin Ambriz. World map OOP.py" />
         <option value="$PROJECT_DIR$/Inherentance notes.py" />
         <option value="$PROJECT_DIR$/Programmer.py" />
-        <option value="$PROJECT_DIR$/Jazmin Ambriz - Dictionary World Map.py" />
         <option value="$PROJECT_DIR$/Items.py" />
+        <option value="$PROJECT_DIR$/Jazmin A - CROA.py" />
+        <option value="$PROJECT_DIR$/Jazmin Ambriz - Dictionary World Map.py" />
+        <option value="$PROJECT_DIR$/Jazmin Ambriz. World map OOP.py" />
+        <option value="$PROJECT_DIR$/Jazmin A - CYOA.py" />
       </list>
     </option>
   </component>
@@ -129,7 +111,7 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -142,7 +124,21 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="CSE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSE" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -166,24 +162,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Items">
-    <configuration name="Class Notes" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CSE" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Class Notes.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
+  <component name="RunManager" selected="Python.Jazmin A - CROA">
     <configuration name="Items" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -201,6 +180,23 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="Jazmin A - CROA" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CSE" />
+      <option name="SCRIPT_NAME" value="C:\Users\757u\Documents\GitHub\CSE\Jazmin A - CYOA.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="Jazmin Ambriz - Characters" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -214,6 +210,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CSE" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Jazmin Ambriz - Characters.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="Jazmin Ambriz. World map OOP" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CSE" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Jazmin Ambriz. World map OOP.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -252,23 +265,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="Pythagorean Theorem Jazmin Ambriz" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CSE" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Pythagorean Theorem Jazmin Ambriz.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -289,19 +285,19 @@
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Python.Unnamed" />
       <item index="1" class="java.lang.String" itemvalue="Python.Jazmin Guess Game" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Pythagorean Theorem Jazmin Ambriz" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Class Notes" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Jazmin Ambriz - Characters" />
-      <item index="5" class="java.lang.String" itemvalue="Python.Programmer" />
-      <item index="6" class="java.lang.String" itemvalue="Python.Items" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Jazmin Ambriz - Characters" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Programmer" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Items" />
+      <item index="5" class="java.lang.String" itemvalue="Python.Jazmin A - CROA" />
+      <item index="6" class="java.lang.String" itemvalue="Python.Jazmin Ambriz. World map OOP" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Items" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Programmer" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Jazmin Ambriz - Characters" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Class Notes" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Pythagorean Theorem Jazmin Ambriz" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Jazmin A - CROA" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Jazmin Ambriz. World map OOP" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Items" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Programmer" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Jazmin Ambriz - Characters" />
       </list>
     </recent_temporary>
   </component>
@@ -320,14 +316,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44729137" sideWeight="0.49061033" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280757" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3280757" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22986823" sideWeight="0.5093897" order="2" side_tool="true" content_ui="tabs" />
@@ -359,13 +354,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Jazmin Guess Game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="37" lean-forward="false" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Jazmin Ambriz Guess Game.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -636,72 +624,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Class Notes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Inherentance notes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="21" lean-forward="false" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Jazmin Ambriz - Dictionary World Map.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="117" column="31" lean-forward="false" selection-start-line="117" selection-start-column="31" selection-end-line="117" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Function Notes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
+        <state relative-caret-position="175">
           <caret line="25" column="43" lean-forward="false" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Jazmin Ambriz. World map OOP.py">
+    <entry file="file://$PROJECT_DIR$/Class Notes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="78" column="34" lean-forward="false" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
+        <state relative-caret-position="17">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Jazmin Ambriz- Characters(google.classroom).py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state relative-caret-position="82">
+          <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Programmer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+        <state relative-caret-position="408">
+          <caret line="24" column="70" lean-forward="false" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Inherentance notes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="24" column="55" lean-forward="false" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Jazmin Ambriz - Characters.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+        <state relative-caret-position="546">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Items.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+        <state relative-caret-position="481">
+          <caret line="169" column="0" lean-forward="false" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Jazmin Ambriz - Dictionary World Map.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1291">
+          <caret line="39" column="12" lean-forward="false" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Jazmin Ambriz. World map OOP.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="98" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Jazmin A - CYOA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="227" column="8" lean-forward="true" selection-start-line="227" selection-start-column="8" selection-end-line="227" selection-end-column="8" />
           <folding />
         </state>
       </provider>

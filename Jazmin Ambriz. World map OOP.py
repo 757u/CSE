@@ -82,7 +82,7 @@ short_directions = ['n', 's', 'e', 'w', 'se', 'sw', 'ne', 'nw']
 
 while True:
     print(current_node.name)   # change
-    print(current_node.descriptions)   # change
+    print(current_node.description)   # change
 
     command = input('>_').lower().strip()
     if command == 'quit':
@@ -92,7 +92,7 @@ while True:
         command = directions[pos]
     if command in directions:
         try:
-            except KeyError:
+            except_KeyError:()
             print("You cannot go this way")
     else:
         print("Command not recognize")
