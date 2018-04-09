@@ -67,14 +67,13 @@ class CoatOfInvisibility(Wearable):
 
 
 class Lens(Item):
-    def __init__(self):
-        super(Lens, self).__init__("Lens", "This lens looks worthless, but it will be of great use in this world",
-                                   100, 1)
+    def __init__(self, name, description, value, weight):
+        super(Lens, self).__init__(name, description, value, weight)
 
 
 class Key(Item):
-    def __init__(self):
-        super(Key, self).__init__("Key", "Very small gold key", 80, 1)
+    def __init__(self, name, description, value, weight):
+        super(Key, self).__init__(name, description, value, weight)
 
     def pick_up_key(self):
         print("%d is in your hand", self.name)
@@ -95,10 +94,8 @@ class Chest(Item):
 
 
 class Book(Item):
-    def __init__(self):
-        super(Book, self).__init__("Magical Book", "This book looks very old, on the top of it there is a note. "
-                                                   "The note reads: 'Warning don't"
-                                                   "read this book, if you do you will be in danger.", 100, 10)
+    def __init__(self, name, description, value, weight):
+        super(Book, self).__init__(name, description, value, weight)
 
     def open_book(self):
         print("%d is now open", self.name)
@@ -108,16 +105,16 @@ class Book(Item):
 
 
 class Pen(Item):
-    def __init__(self):
-        super(Pen, self).__init__("Dip Pen", "Wood Dip pen", 5, 1)
+    def __init__(self, name, description, value, weight):
+        super(Pen, self).__init__(name, description, value, weight)
 
     def pick_up_item(self):
         print("%d has been picked up", self.name)
 
 
 class Rope(Item):
-    def __init__(self):
-        super(Rope, self).__init__("Rope", "White long rope", 10, 10)
+    def __init__(self, name, description, value, weight):
+        super(Rope, self).__init__(name, description, value, weight)
 
 
 class Glasses(Item):
@@ -188,12 +185,12 @@ class Room(object):
 sword = Weapon("Sword", "Big shiny sword", 20, 9, 20)
 knife = Weapon("knife", "small kitchen knife", 15, 3, 13)
 Shovel = Weapon("Shovel", "dirty old shovel", 10, 8, 7)
-Tomato_sauce = Weapon("Spray bottles with tomato sauce inside", "Cleaning spray bottles containig tomato sauce, this"
+Tomato_sauce = Weapon("Spray bottles with tomato sauce inside", "Cleaning spray bottles containing tomato sauce, this"
                       "could help you defeat the troll", 65, 5, 79)
 Backpack = Wearable("Backpack", "Black backpack", 2, 2)
 Armor = Wearable("Protective Armor", "Armor", 15, 30)
 clothing = Wearable("Cloths", "T-shirt and some jeans", 1, 3)
-Apple = Consumable("Apple", "Red normal size apple", 5, 2, )
+Apple = Consumable("Apple", "Red normal size apple", 5, 2)
 Sandwich = Consumable("Sandwich", "Yummy! Ham sandwich", 5, 3)
 Water_bottle = Drinkable("Water Bottle", "Individual water bottle", 5, 4)
 Orange_Juice = Drinkable("Orange Juice", "Orange juice can", 5, 4)
@@ -201,10 +198,12 @@ Health_Potion = Consumable("Health Potion", "Tiny bottle, the description reads 
 Change_characters_potion = Consumable("Change Characters", "The label reads: 'If u want to change characters drink this"
                                       "potion", 20, 2)
 coat = CoatOfInvisibility("Coat", "Brown Coat", 10, 5)
-Lens = Lens()
-book = Book()
-Pen = Pen()
-Rope = Rope()
+Lens = Lens("Lens", "This lens looks worthless, but it will be of great use in this adventure", 100, 1)
+book = Book("Magical Book", "This book looks very old, on the top of it there is a note. "
+            "The note reads: 'Warning don't read this book, if you do you will be in danger.", 100, 10)
+Pen = Pen("Dip Pen", "Wood Dip pen", 5, 1)
+Rope = Rope("Rope", "White long rope", 10, 10)
+key = Key("Key", "Very small gold key", 80, 1)
 FlyingShoes = FlyingShoes()
 player = Character("Player", "You", 100, False, 20)
 enemy = Character("Enemy", "It's a bad guy", 100, False, 10)
@@ -225,13 +224,13 @@ Art_Room = Room("Art Room", None, None, None, "Garden", None, None, None, None, 
                                                                                       " an art stand with some dry"
                                                                                       " paints by the side")
 
-Southeast_of_Garden = Room("Front of House", 'Second_Floor', "Inside_House", "Dangerous Forest", None, None, None,
+Southeast_of_Garden = Room("Front of House", 'Second_Floor', "Inside_House", "Dangerous Forest", "Living Room", None, None,
                            None, None, None, "Black two story house, with two white windows in front.")
 
-Inside_House = Room("Inside House", None, "Inside Pool", None, "Living Room", None, None, None, "Bedroom", "Kitchen",
-                    "You are inside a two story house; standing at the beginning of a corridor. Around you there are"
-                    "different rooms and doors leading to the yet unknown. To the side a bit to the east there is a"
-                    "fancy staircase leading to the second floor.")
+Inside_House = Room("Inside House", "Second_Floor", "Inside_Pool", None, "Living", "Kitchen", None, None,
+                    "Bedroom", "Art_Room", "You are inside a two story house; standing at the beginning of a corridor."
+                    " Around you there are different rooms and doors leading to the yet unknown. To the side a bit to"
+                    " the east there is a fancy staircase leading to the second floor.")
 
 Swimming_pool = Room("Inside Pool", None, None, None, "Big Bathroom", None, "Bedroom", None, None, None, "Big"
                      "rectangular pool with crystal water, the bottom can not be seen because of its deepness, inside"
@@ -246,34 +245,54 @@ Bedroom = Room("Bedroom", None, "Inside Pool", "Front Door", None, "Brick Wall",
                "there is a build in closet. At the northeast corner of the room there is a small bathroom. Inside the"
                " bathroom there is an open window leading to the outside east of the house.")
 
-Second_Floor = Room("Up stairs", None, "Special Room", None, "Library", "Waiting Room", None, None, "Single Room",
-                    "Waiting Room", "You are up stairs in the second floor, This floor looks very similar to the"
-                    "first floor just with different room that you are about to discover (Only if you are willing to).")
+Second_Floor = Room("Up stairs", None, "Special_Room", None, "Library", "Waiting_Room", None, None,
+                    "Single_Room's Hallway", "Waiting Room", "You are up stairs in the second floor, This floor looks "
+                    "very similar to the first floor just with different rooms that you are about to discover"
+                    " (Only if you are willing to).")
+Staircase = Room("Staircase", None, "Special_Room", None, "Library", "Office", None, None, "Bedroom", "Waiting_Room",
+                 "You are back at where the fancy staircase start, you are still in the second floor.")
 
 Library = Room("Library", None, "Hallway", None, None, "Staircase", None, None, "(FIRST) Single bedroom",
-               "Second Floor Bedroom", "The Library room is filled with row and rows of books of all kinds. Books that"
-               "you have never imagined; they are a bit dusty as if no one has touched them in years.")
+               "Second Floor Bedroom", "The Library room is filled with rows and rows of books of all kinds. Books that"
+               " you have never imagined; they are a bit dusty as if no one has touched them in years.")
 
-Special_Room = Room("Second Floor Bedroom", None, None, "Staircase", None, "Waiting Room", "Library",
-                    "Waiting Room", "Hallway", None, "You are standing in a very typical room,"
+Hallway = Room("Hallway", None, None, "Hallway", "FIRST_Single_bedroom", "Special_Room", "Library", "Waiting_Room",
+               "SECOND_Single_bedroom", None, "You are in a dark hallway. The only light you have is coming from some"
+               " old flickering lamps attached to the wall. In the wall there are some painting of old"
+               " and young people that you have never seen before, to the east there are two doors and to the west"
+               " there is only one.")
+
+FIRST_Single_bedroom = Room("FIRST_Single_bedroom", None, "SECOND_Single_bedroom", "Bedroom", None, "Special_Room",
+                            "Library", "Waiting_Room", None, "SECOND_Single_bedroom", "You are in a tiny room, it looks"
+                            " like you can only fit a small bed. The walls are pale green and they have some "
+                            "writing on them.1")
+
+SECOND_Single_bedroom = Room("SECOND_Single_bedroom", None, None, "FIRST_Single_bedroom", None, "Special_Room",
+                             "Bedroom", "Waiting_Room", None, None, "You are in a tiny room, it looks"
+                             " like you can only fit a small bed. The walls are pale green and they have some "
+                             "writing on them.2")
+
+Special_Room = Room("Second Floor Bedroom", None, None, "Second_Floor", "Hallway", "Waiting Room", "Library",
+                    "Waiting Room", "Hallway", None, "You are standing in a very typical room, "
                     "there is a bed, some lamps by the sides, books on the floor. To the north wall there is an open"
                     "window. But then you notice one of the weirdest things; part of the floor is glass allowing you to"
                     " see down and take a look at the pool. You are not sure if the glass is very stable.")
 
-Gym = Room("Gym", None, "Back Gym wall", "Office", "Second Floor Bedroom", "Waiting Room", "Library", "Waiting Room",
+Gym = Room("Gym", None, "Back Gym wall", "Waiting_Room", "Second Floor Bedroom", "Waiting Room", "Library", "Waiting Room",
            None, "Gym", "The gym is weird shaped. It is found at the northwest corner of the house. Instead of being a"
                  " regular rectangular shape building it is half circle.")
 
-Office = Room("Office", None, "Gym", None, "Staircase", "Waiting Room", None, None, "Library", "Waiting Room", "You are"
-              "in a room that looks like an office. This room has a desk, an old computer, and some bookshelf.")
+Office = Room("Office", None, "Waiting_Room", None, "Staircase", "Waiting Room", None, None, "Library",
+              "Waiting_Room", "You are in a room that looks like an office. This room has a desk, an old computer, "
+              "and some bookshelf.")
 
 Waiting_Room = Room("Waiting Room", None, "Gym", "Office", "Library", None, "Office", None, "Second Floor Bedroom",
                     None, "You find yourself in a small lobby next to an office. The Waiting room or lobby")
 
 
 current_node = Southeast_of_Garden
-directions = ['north', 'south', 'east', 'west', 'southeast', 'southwest', 'northeast', 'northwest']
-short_directions = ['n', 's', 'e', 'w', 'se', 'sw', 'ne', 'nw']
+directions = ['north', 'south', 'east', 'west', 'southeast', 'southwest', 'northeast', 'northwest', 'up']
+short_directions = ['n', 's', 'e', 'w', 'se', 'sw', 'ne', 'nw', 'u']
 
 while True:
     # Room Information
