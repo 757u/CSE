@@ -166,6 +166,7 @@ class Character(object):
 class Room(object):
     def __init__(self, name, up, north, south, east, west, southeast, southwest, northeast, northwest, description):
         self.name = name
+        self.up = up
         self.north = north
         self.south = south
         self.east = east
@@ -175,11 +176,10 @@ class Room(object):
         self.northeast = northeast
         self.northwest = northwest
         self.description = description
-        self.up = up
 
     def move(self, direction):
-        global current_node
-        current_node = globals()[getattr(self, direction)]
+            global current_node
+            current_node = globals()[getattr(self, direction)]
 
 
 sword = Weapon("Sword", "Big shiny sword", 20, 9, 20)
@@ -208,15 +208,22 @@ FlyingShoes = FlyingShoes()
 player = Character("Player", "You", 100, False, 20)
 enemy = Character("Enemy", "It's a bad guy", 100, False, 10)
 
-living = Room("Living Room", None, None, None, None, 'kitchen', None, None, None, None, 'There are three couches and a'
-              ' TV.')
+living = Room("Living Room", None, None, None, None, None, "kitchen", None, None, None, "There are three couches"
+              "and a TV.")
 
 kitchen = Room("Kitchen", "Old Room", None, None, "Living", "Garden", None, None, None, None, "Big wooden table,"
                " kitchen has old rusty drawers with a sink. To the west there is a big clear door leading to the"
                "garden")
 
-Garden = Room("Garden", None, None, None, "Antique Art Room", None, None, None, None, None, "'Green grass all over,"
-              " colorful flower are starting to bloom.")
+West_of_Garden = Room("Garden", None, "West_of_Garden", "West_of_Garden", "Antique Art Room", "Dangerous_Forest",
+                      "South_of_Garden", "Road", "North_Garden", "Forest", " You are west of the House, there is green"
+                      " grass all over, colorful flowers are starting to bloom.")
+
+# Road
+# Dangerous Forest
+
+South_of_Garden = Room("Front of House", 'Second_Floor', "Inside_House", "Dangerous Forest", "Living Room", None,
+                       None, None, None, None, "Black two story house, with two white windows in front.")
 
 Art_Room = Room("Art Room", None, None, None, "Garden", None, None, None, None, None, "To the east there is a brick"
                                                                                       " wall, which has no exist. In "
@@ -224,15 +231,12 @@ Art_Room = Room("Art Room", None, None, None, "Garden", None, None, None, None, 
                                                                                       " an art stand with some dry"
                                                                                       " paints by the side")
 
-Southeast_of_Garden = Room("Front of House", 'Second_Floor', "Inside_House", "Dangerous Forest", "Living Room", None, None,
-                           None, None, None, "Black two story house, with two white windows in front.")
+Inside_House = Room("Inside House", "Second_Floor", "Inside_Pool", "Southeast_of_garden", "Living", "Kitchen", None,
+                    None, "Bedroom", "Art_Room", "You are inside a two story house; standing at the beginning of a "
+                    "corridor. Around you there are different rooms and doors leading to the yet unknown. To the side"
+                    " a bit to the east there is a fancy staircase leading to the second floor.")
 
-Inside_House = Room("Inside House", "Second_Floor", "Inside_Pool", None, "Living", "Kitchen", None, None,
-                    "Bedroom", "Art_Room", "You are inside a two story house; standing at the beginning of a corridor."
-                    " Around you there are different rooms and doors leading to the yet unknown. To the side a bit to"
-                    " the east there is a fancy staircase leading to the second floor.")
-
-Swimming_pool = Room("Inside Pool", None, None, None, "Big Bathroom", None, "Bedroom", None, None, None, "Big"
+Swimming_pool = Room("Inside Pool", None, None, "Staircase", "Big Bathroom", None, "Bedroom", None, None, None, "Big"
                      "rectangular pool with crystal water, the bottom can not be seen because of its deepness, inside"
                      " the pool there are infinite steps leading down to the bottom of the pool (if there is a bottom.")
 
@@ -249,8 +253,14 @@ Second_Floor = Room("Up stairs", None, "Special_Room", None, "Library", "Waiting
                     "Single_Room's Hallway", "Waiting Room", "You are up stairs in the second floor, This floor looks "
                     "very similar to the first floor just with different rooms that you are about to discover"
                     " (Only if you are willing to).")
-Staircase = Room("Staircase", None, "Special_Room", None, "Library", "Office", None, None, "Bedroom", "Waiting_Room",
-                 "You are back at where the fancy staircase start, you are still in the second floor.")
+Staircase_sec = Room("Staircase", None, "Special_Room", None, "Library", "Office", None, None, "Bedroom",
+                     "Waiting_Room", "You are back at where the fancy staircase start, you are still in the second"
+                     " floor.")
+
+Staircase_fir = Room("Staircase", "Second_Floor", "Inside_Pool", "Southeast_of_Garden", "Living", "Kitchen", None, None,
+                     "Bedroom", "Art_Room", "You are in between the Front Door House and the fancy staircase leading up"
+                     " to the second floor. ")
+
 
 Library = Room("Library", None, "Hallway", None, None, "Staircase", None, None, "(FIRST) Single bedroom",
                "Second Floor Bedroom", "The Library room is filled with rows and rows of books of all kinds. Books that"
@@ -272,15 +282,15 @@ SECOND_Single_bedroom = Room("SECOND_Single_bedroom", None, None, "FIRST_Single_
                              " like you can only fit a small bed. The walls are pale green and they have some "
                              "writing on them.2")
 
-Special_Room = Room("Second Floor Bedroom", None, None, "Second_Floor", "Hallway", "Waiting Room", "Library",
+Special_Room = Room("Second Floor's Main Bedroom", None, None, "Second_Floor", "Hallway", "Waiting Room", "Library",
                     "Waiting Room", "Hallway", None, "You are standing in a very typical room, "
                     "there is a bed, some lamps by the sides, books on the floor. To the north wall there is an open"
                     "window. But then you notice one of the weirdest things; part of the floor is glass allowing you to"
                     " see down and take a look at the pool. You are not sure if the glass is very stable.")
 
-Gym = Room("Gym", None, "Back Gym wall", "Waiting_Room", "Second Floor Bedroom", "Waiting Room", "Library", "Waiting Room",
-           None, "Gym", "The gym is weird shaped. It is found at the northwest corner of the house. Instead of being a"
-                 " regular rectangular shape building it is half circle.")
+Gym = Room("Gym", None, "Back Gym wall", "Waiting_Room", "Special_Room", "Waiting Room", "Library",
+           "Waiting Room", None, "Gym", "The gym is weird shaped. It is found at the northwest corner of the house. "
+           "Instead of being a regular rectangular shape building it is half circle.")
 
 Office = Room("Office", None, "Waiting_Room", None, "Staircase", "Waiting Room", None, None, "Library",
               "Waiting_Room", "You are in a room that looks like an office. This room has a desk, an old computer, "
@@ -290,7 +300,7 @@ Waiting_Room = Room("Waiting Room", None, "Gym", "Office", "Library", None, "Off
                     None, "You find yourself in a small lobby next to an office. The Waiting room or lobby")
 
 
-current_node = Southeast_of_Garden
+current_node = South_of_Garden
 directions = ['north', 'south', 'east', 'west', 'southeast', 'southwest', 'northeast', 'northwest', 'up']
 short_directions = ['n', 's', 'e', 'w', 'se', 'sw', 'ne', 'nw', 'u']
 
