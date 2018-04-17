@@ -164,7 +164,9 @@ class Character(object):
 
 
 class Room(object):
-    def __init__(self, name, up, north, south, east, west, southeast, southwest, northeast, northwest, description):
+    def __init__(self, name, up, north, south, east, west, southeast, southwest, northeast, northwest, description,
+                 items=None):
+
         self.name = name
         self.up = up
         self.north = north
@@ -176,6 +178,7 @@ class Room(object):
         self.northeast = northeast
         self.northwest = northwest
         self.description = description
+        self.inventory = items
 
     def move(self, direction):
             global current_node
@@ -209,27 +212,28 @@ player = Character("Player", "You", 100, False, 20)
 enemy = Character("Enemy", "It's a bad guy", 100, False, 10)
 
 living = Room("Living Room", None, None, None, None, None, "kitchen", None, None, None, "There are three couches"
-              "and a TV.")
+              "and a TV.", [Water_bottle])
 
 kitchen = Room("Kitchen", "Old Room", None, None, "Living", "Garden", None, None, None, None, "Big wooden table,"
                " kitchen has old rusty drawers with a sink. To the west there is a big clear door leading to the"
-               "garden")
+               "garden", [knife, Tomato_sauce])
 
 West_of_Garden = Room("Garden", None, "West_of_Garden", "West_of_Garden", "Antique Art Room", "Dangerous_Forest",
                       "South_of_Garden", "Road", "North_Garden", "Forest", " You are west of the House, there is green"
                       " grass all over, colorful flowers are starting to bloom.")
 
-# Road
-# Dangerous Forest
+# Road = Room("Road", None, "")
+# Dangerous_Forest = Room("Dangerous Forest", None, "")
+# Old_Room = Room("Old Room", None )
 
 South_of_Garden = Room("Front of House", 'Second_Floor', "Inside_House", "Dangerous Forest", "Living Room", None,
-                       None, None, None, None, "Black two story house, with two white windows in front.")
+                       None, None, None, None, "Black two story house, with two white windows in front.", [Lens])
 
 Art_Room = Room("Art Room", None, None, None, "Garden", None, None, None, None, None, "To the east there is a brick"
                                                                                       " wall, which has no exist. In "
                                                                                       "the middle of the room there is"
                                                                                       " an art stand with some dry"
-                                                                                      " paints by the side")
+                                                                                      " paints by the side", [sword])
 
 Inside_House = Room("Inside House", "Second_Floor", "Inside_Pool", "Southeast_of_garden", "Living", "Kitchen", None,
                     None, "Bedroom", "Art_Room", "You are inside a two story house; standing at the beginning of a "
@@ -247,7 +251,7 @@ Big_Bathroom = Room("Big Bathroom", None, None, "Bedroom", None, None, "Living R
 Bedroom = Room("Bedroom", None, "Inside Pool", "Front Door", None, "Brick Wall", "Living Room", None, None, None,
                "Inside the bedroom there is a bed with two small drawers by the sides. In the south wall of the room"
                "there is a build in closet. At the northeast corner of the room there is a small bathroom. Inside the"
-               " bathroom there is an open window leading to the outside east of the house.")
+               " bathroom there is an open window leading to the outside east of the house.", [clothing])
 
 Second_Floor = Room("Up stairs", None, "Special_Room", None, "Library", "Waiting_Room", None, None,
                     "Single_Room's Hallway", "Waiting Room", "You are up stairs in the second floor, This floor looks "
@@ -275,7 +279,7 @@ Hallway = Room("Hallway", None, None, "Hallway", "FIRST_Single_bedroom", "Specia
 FIRST_Single_bedroom = Room("FIRST_Single_bedroom", None, "SECOND_Single_bedroom", "Bedroom", None, "Special_Room",
                             "Library", "Waiting_Room", None, "SECOND_Single_bedroom", "You are in a tiny room, it looks"
                             " like you can only fit a small bed. The walls are pale green and they have some "
-                            "writing on them.1")
+                            "writing on them.1", [Backpack])
 
 SECOND_Single_bedroom = Room("SECOND_Single_bedroom", None, None, "FIRST_Single_bedroom", None, "Special_Room",
                              "Bedroom", "Waiting_Room", None, None, "You are in a tiny room, it looks"
@@ -286,18 +290,18 @@ Special_Room = Room("Second Floor's Main Bedroom", None, None, "Second_Floor", "
                     "Waiting Room", "Hallway", None, "You are standing in a very typical room, "
                     "there is a bed, some lamps by the sides, books on the floor. To the north wall there is an open"
                     "window. But then you notice one of the weirdest things; part of the floor is glass allowing you to"
-                    " see down and take a look at the pool. You are not sure if the glass is very stable.")
+                    " see down and take a look at the pool. You are not sure if the glass is very stable.", [Chest])
 
 Gym = Room("Gym", None, "Back Gym wall", "Waiting_Room", "Special_Room", "Waiting Room", "Library",
            "Waiting Room", None, "Gym", "The gym is weird shaped. It is found at the northwest corner of the house. "
-           "Instead of being a regular rectangular shape building it is half circle.")
+           "Instead of being a regular rectangular shape building it is half circle.", [Armor])
 
 Office = Room("Office", None, "Waiting_Room", None, "Staircase", "Waiting Room", None, None, "Library",
               "Waiting_Room", "You are in a room that looks like an office. This room has a desk, an old computer, "
-              "and some bookshelf.")
+              "and some bookshelf.", [Pen])
 
 Waiting_Room = Room("Waiting Room", None, "Gym", "Office", "Library", None, "Office", None, "Second Floor Bedroom",
-                    None, "You find yourself in a small lobby next to an office. The Waiting room or lobby")
+                    None, "You find yourself in a small lobby next to an office. The Waiting room or lobby", [Sandwich])
 
 
 current_node = South_of_Garden
@@ -327,3 +331,16 @@ while True:
             print("You cannot go this way")
     else:
         print("Command not recognized")
+
+    print(current_node.name)
+    print(current_node.description)
+
+    if command in Character:
+         print("you Have attacked for 20")
+    else: print(player.health)
+
+
+
+
+# If command[0:7] = "pick up":
+# item = command[8:12]
