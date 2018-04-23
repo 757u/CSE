@@ -90,7 +90,7 @@ class Chest(Item):
         print("%d has open", self.name)
 
     def take_item(self):
-        print("item is out of the chest")
+        print("item is out of the %s" % self.name)
 
 
 class Book(Item):
@@ -98,10 +98,10 @@ class Book(Item):
         super(Book, self).__init__(name, description, value, weight)
 
     def open_book(self):
-        print("%d is now open", self.name)
+        print("%s is now open" % self.name)
 
     def read_book(self):
-        print("The %d reads:...", self.name)
+        print("The %s reads:..." % self.name)
 
 
 class Pen(Item):
@@ -122,7 +122,7 @@ class Glasses(Item):
         super(Glasses, self).__init__("Glasses", "clear black glasses", 2, 2)
 
     def see_through_glasses(self):
-        print("%d are on your face", self.name)
+        print("%s are on your face" % self.name)
 
 
 class FlyingShoes(Wearable):
@@ -161,6 +161,17 @@ class Character(object):
         if self.health <= 0:
             self.death = True
             print("You died")
+
+
+class Chest(Item):
+    def __init__(self):
+        super(Chest, self).__init__("Chest", "Old big dirty chest", 30, 70,)
+
+    def open_chest(self):
+        print("%d has open", self.name)
+
+    def take_item(self):
+        print("item is out of the %s" % self.name)
 
 
 class Room(object):
@@ -211,12 +222,16 @@ FlyingShoes = FlyingShoes()
 player = Character("Player", "You", 100, False, 20)
 enemy = Character("Enemy", "It's a bad guy", 100, False, 10)
 
-living = Room("Living Room", None, None, None, None, None, "kitchen", None, None, None, "There are three couches"
-              "and a TV.", [Water_bottle])
 
-kitchen = Room("Kitchen", "Old Room", None, None, "Living", "Garden", None, None, None, None, "Big wooden table,"
-               " kitchen has old rusty drawers with a sink. To the west there is a big clear door leading to the"
-               "garden", [knife, Tomato_sauce])
+living = Room("Living Room", None, "Bedroom", None, "living", "Staircase", "kitchen", None, None, None, "The walls of "
+              "the room are covered by yellow wall paper. In the east wall there is a big white window, through the "
+              "window you can observe the green grass. In  the room there are four leather couches. In the south wall "
+              "there is a gigantic television", [Water_bottle])
+
+kitchen = Room("Kitchen", "Old Room", None, None, "Living", "Garden", None, None, None, None, " In the middle of the"
+               " kitchen there is a big wooden table. At the east of the kitchen there are many old rusty drawer; "
+               "surprisingly most of the drawers are full with can tomato sauce, underneath the drawers there is"
+               " a silver sink. To the west there is a  big clear door leading to the garden", [knife, Tomato_sauce])
 
 West_of_Garden = Room("Garden", None, "West_of_Garden", "West_of_Garden", "Antique Art Room", "Dangerous_Forest",
                       "South_of_Garden", "Road", "North_Garden", "Forest", " You are west of the House, there is green"
@@ -227,28 +242,29 @@ West_of_Garden = Room("Garden", None, "West_of_Garden", "West_of_Garden", "Antiq
 # Old_Room = Room("Old Room", None )
 
 South_of_Garden = Room("Front of House", 'Second_Floor', "Inside_House", "Dangerous Forest", "Living Room", None,
-                       None, None, None, None, "Black two story house, with two white windows in front.", [Lens])
+                       None, None, None, None, "Black two story house, with two white windows in front.")
 
-Art_Room = Room("Art Room", None, None, None, "Garden", None, None, None, None, None, "To the east there is a brick"
-                                                                                      " wall, which has no exist. In "
-                                                                                      "the middle of the room there is"
-                                                                                      " an art stand with some dry"
-                                                                                      " paints by the side", [sword])
+Art_Room = Room("Art Room", None, None, None, "Garden", None, None, None, None, None,
+                "To the east there is a brick wall, which has no exist. In the middle of the room there is"
+                " an art stand with some dry paints by the side", [sword])
 
-Inside_House = Room("Inside House", "Second_Floor", "Inside_Pool", "Southeast_of_garden", "Living", "Kitchen", None,
-                    None, "Bedroom", "Art_Room", "You are inside a two story house; standing at the beginning of a "
-                    "corridor. Around you there are different rooms and doors leading to the yet unknown. To the side"
-                    " a bit to the east there is a fancy staircase leading to the second floor.")
+Inside_House = Room("Inside House", None, "Swimming_pool", "South_of_Garden", "living", "Kitchen", "South_of_Garden",
+                    "South_of_Garden", "Bedroom", "Art_Room", "You are inside a two story house; standing at the "
+                    "beginning of a corridor, to the side of you there is a small table. In the table there is"
+                    " something that looks like a lens. Around you there are different rooms and doors leading to the"
+                    " yet unknown. To the side a bit to the east there is a fancy staircase leading to the second"
+                    " floor.",
+                    [Lens])
 
-Swimming_pool = Room("Inside Pool", None, None, "Staircase", "Big Bathroom", None, "Bedroom", None, None, None, "Big"
+Swimming_pool = Room("Indoor Pool", None, None, "Staircase", "Big Bathroom", None, "Bedroom", None, None, None, "Big"
                      "rectangular pool with crystal water, the bottom can not be seen because of its deepness, inside"
                      " the pool there are infinite steps leading down to the bottom of the pool (if there is a bottom.")
 
-Big_Bathroom = Room("Big Bathroom", None, None, "Bedroom", None, None, "Living Room", "Brick Wall", None, None, "You"
+Big_Bathroom = Room("Big Bathroom", None, None, "Bedroom", None, None, "living", "Brick Wall", None, None, "You"
                     "are now east of the pool inside a gigantic bathroom, this bathroom is very antique, and it is also"
                     "very unique.")
 
-Bedroom = Room("Bedroom", None, "Inside Pool", "Front Door", None, "Brick Wall", "Living Room", None, None, None,
+Bedroom = Room("Bedroom", None, "Swimming_pool", "Front Door", None, "Brick Wall", "Living Room", None, None, None,
                "Inside the bedroom there is a bed with two small drawers by the sides. In the south wall of the room"
                "there is a build in closet. At the northeast corner of the room there is a small bathroom. Inside the"
                " bathroom there is an open window leading to the outside east of the house.", [clothing])
@@ -310,8 +326,14 @@ short_directions = ['n', 's', 'e', 'w', 'se', 'sw', 'ne', 'nw', 'u']
 
 while True:
     # Room Information
-    print(current_node.name)   # change
-    print(current_node.description)   # change
+    print(current_node.name)
+    print(current_node.description)
+
+    if current_node.inventory is not None:
+        print()
+        print("The following item(s) are in the room: ")
+        for item in current_node.inventory:
+            print(item.name)
 
     # Asks for input
     command = input('>_').lower().strip()
@@ -329,18 +351,46 @@ while True:
             current_node.move(command)
         except KeyError:
             print("You cannot go this way")
+
+    elif "take" in command:
+        item_requested = command[5:]
+        print("You attempt to pick up a %s" % item_requested)
+        found = False
+        for item in current_node.inventory:
+            if item.name.lower() == item_requested.lower():
+
+                print("taken")
+                found = True
+
+        if not found:
+            print("I don't see that here")
     else:
         print("Command not recognized")
 
-    print(current_node.name)
-    print(current_node.description)
+    def pick_up_item():
+        item_wanted = command[8:]
+        picked_up_item = True
+        print("You attempted to pick up a %s" % item_wanted)
+        picked_up = False
+        for item in current_node.inventory:
+            item.name = item.name.lower()
+            item_wanted = item_wanted.lower()
+        print("picked up")
+        picked_up = True
 
-    if command in Character:
-         print("you Have attacked for 20")
-    else: print(player.health)
+        if not found:
+            print("That item can not be picked up")
 
+# def pick_up_item(self, item):
+# if command[7:0] = pick_up_item
+# pick_up_item = True
 
-
+# item_wanted = command[8:]
 
 # If command[0:7] = "pick up":
 # item = command[8:12]
+# make it so that it cs pick up items
+
+# def pick_up_items(self):
+    # if self.pick_up_items:
+        # print("Item has been picked up")
