@@ -14,6 +14,12 @@ class Item(object):
         self.value = value
         self.weight = weight
 
+    def pick_up_item(self):
+        print(" You have now picked up a %s " % self.name)
+
+    def drop_item(self):
+        print("%d has been dropped", self.name)
+
 
 class Weapon(Item):
     def __init__(self, name, description, value, weight, damage):
@@ -22,12 +28,6 @@ class Weapon(Item):
 
     def attack(self):
         print("Attacks for %d of damage", self.damage)
-
-    def pick_up_item(self):
-        print("%s is on your hand" % self.name)
-
-    def drop_item(self):
-        print("%d has been dropped", self.name)
 
 
 class Wearable(Item):
@@ -142,15 +142,17 @@ class Character(object):
         self.health = health
         self.death = death
         self.damage = damage
+        self.inventory = []
 
     def eat(self):
         if self.eat:
             print("That was good!")
             self.health += 5
 
-    def pick_up_items(self):
-        if self.pick_up_items:
-            print("Item has been picked up")
+    def pick_up(self, item):
+        self.inventory.append(item)
+        item.pick_up_item()
+
 
     def attack(self, target):
         print("%s attacks %s for %d damage" % (self.name, target.name, self.damage))
@@ -320,6 +322,21 @@ Waiting_Room = Room("Waiting Room", None, "Gym", "Office", "Library", None, "Off
                     None, "You find yourself in a small lobby next to an office. The Waiting room or lobby", [Sandwich])
 
 
+def take(item_requested):
+    print("You attempt to pick up a %s" % item_requested)
+    found = False
+    for item in current_node.inventory:
+        if item.name.lower() == item_requested.lower():
+            # print("taken")
+            found = True
+            Room.inventory.remove(item_requested)
+            Character.iventory.append(item_requested)
+            player.pick_up(item)
+
+    if not found:
+        print("I don't see that here")
+
+
 current_node = South_of_Garden
 directions = ['north', 'south', 'east', 'west', 'southeast', 'southwest', 'northeast', 'northwest', 'up']
 short_directions = ['n', 's', 'e', 'w', 'se', 'sw', 'ne', 'nw', 'u']
@@ -354,43 +371,12 @@ while True:
 
     elif "take" in command:
         item_requested = command[5:]
-        print("You attempt to pick up a %s" % item_requested)
-        found = False
-        for item in current_node.inventory:
-            if item.name.lower() == item_requested.lower():
-
-                print("taken")
-                found = True
-
-        if not found:
-            print("I don't see that here")
+        take(item_requested)
+    elif "pick up" in command:
+        item_requested = command[8:]
+        take(item_requested)
     else:
         print("Command not recognized")
 
-    def pick_up_item():
-        item_wanted = command[8:]
-        picked_up_item = True
-        print("You attempted to pick up a %s" % item_wanted)
-        picked_up = False
-        for item in current_node.inventory:
-            item.name = item.name.lower()
-            item_wanted = item_wanted.lower()
-        print("picked up")
-        picked_up = True
 
-        if not found:
-            print("That item can not be picked up")
-
-# def pick_up_item(self, item):
-# if command[7:0] = pick_up_item
-# pick_up_item = True
-
-# item_wanted = command[8:]
-
-# If command[0:7] = "pick up":
-# item = command[8:12]
-# make it so that it cs pick up items
-
-# def pick_up_items(self):
-    # if self.pick_up_items:
-        # print("Item has been picked up")
+# .remove item

@@ -177,14 +177,13 @@ print(len(the_count))
 # print(listOne[-1])
 #
 # # Adding things to a list
-# cheesburger_ingredients.append("Fries")
-# print(cheesburger_ingredients)
 #
-# # Remove things from a list
-# cheesburger_ingredients.pop(1)
-# print(cheesburger_ingredients)
-# cheesburger_ingredients.remove("cheese")
-# print(cheesburger_ingredients)
+#
+ #  Remove things from a list
+cheesburger_ingredients.pop(1)
+print(cheesburger_ingredients)
+cheesburger_ingredients.remove("cheese")
+print(cheesburger_ingredients)
 #
 # # Getting the alphabet
 # import string
