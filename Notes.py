@@ -1,22 +1,19 @@
-# ''''''
 # import random
-#  # print("Hello world")
-# #
-# # # Jazmin
-# #
-# # a = 4
-# # b = 3
-# # print(3 + 5)
-# # print(5 - 3)
-# # print(3 * 5)
-# # print(6 / 2)
-# # print(3 ** 2)
-# #
-# # print()
-# # print("Try to figure out how this works")
-# # print(14 % 5)
-# #
-# # # the "%" sign is a modulus. It finds the reminder.
+# print("Hello world")
+
+# a = 4
+# b = 3
+# print(3 + 5)
+# print(5 - 3)
+# print(3 * 5)
+# print(6 / 2)
+# print(3 ** 2)
+
+# print()
+# print("Try to figure out how this works")
+# print(14 % 5)
+
+# the "%" sign is a modulus. It finds the reminder.
 # #
 # # car_name = "Wibe Mobile"
 # # car_type = "BW"
@@ -143,12 +140,12 @@
 #
 # Lists
 
-the_count = [1, 2, 3, 4, 5]
-cheesburger_ingredients = ['cheese', "beef", "sauce", "sesame seed bun", "avocado", "onion"]
-print(cheesburger_ingredients[0])
-print(cheesburger_ingredients[3])
-print(len(cheesburger_ingredients))
-print(len(the_count))
+# the_count = [1, 2, 3, 4, 5]
+# cheesburger_ingredients = ['cheese', "beef", "sauce", "sesame seed bun", "avocado", "onion"]
+# print(cheesburger_ingredients[0])
+# print(cheesburger_ingredients[3])
+# print(len(cheesburger_ingredients))
+# print(len(the_count))
 
 # # Going through lists
 # for item in cheesburger_ingredients:      # for loops are used when you the exact number of time that something is going through
@@ -179,11 +176,11 @@ print(len(the_count))
 # # Adding things to a list
 #
 #
- #  Remove things from a list
-cheesburger_ingredients.pop(1)
-print(cheesburger_ingredients)
-cheesburger_ingredients.remove("cheese")
-print(cheesburger_ingredients)
+#  Remove things from a list
+# cheesburger_ingredients.pop(1)
+# print(cheesburger_ingredients)
+# cheesburger_ingredients.remove("cheese")
+# print(cheesburger_ingredients)
 #
 # # Getting the alphabet
 # import string
@@ -210,28 +207,28 @@ print(cheesburger_ingredients)
 
 # Dictionaries - Made up of key: value pair
 
-dictionary = {"name": 'Lance', 'age': 26, 'height': 6 * 12 + 2}
+# dictionary = {"name": 'Lance', 'age': 26, 'height': 6 * 12 + 2}
 
 # Accessing things from a dictionary
-print(dictionary['name'])
-print(dictionary['age'])
-print(dictionary['height'])
+# print(dictionary['name'])
+# print(dictionary['age'])
+# print(dictionary['height'])
 
 # Add a pair to a dictionary
-dictionary["proffesion"] = "telemarketer"
+# dictionary["proffesion"] = "telemarketer"
 
-large_dictionary = {
-    'CA': 'California',
-    'AZ': 'Arizona',
-    'NY': 'New York'
-}
-print(large_dictionary['NY'])
-larger_dictionary = {
-    'CA': 'California',
-    'AZ': 'Arizona',
-    'NY': 'New York'
-}
-print(large_dictionary['NY'])
+# large_dictionary = {
+    # 'CA': 'California',
+    # 'AZ': 'Arizona',
+    # 'NY': 'New York'
+# }
+# print(large_dictionary['NY'])
+# larger_dictionary = {
+    # 'CA': 'California',
+    # 'AZ': 'Arizona',
+    # 'NY': 'New York'
+# }
+# print(large_dictionary['NY'])
 
 
 larger_dictionary = {

@@ -13,7 +13,7 @@ class Employee(Person):
         self.job = job
 
     def walk(self):
-        print("You are walking to your job station")
+        print("%d is walking to their job station")
 
 
 class Programmer(Employee):

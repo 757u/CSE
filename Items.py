@@ -167,3 +167,5 @@ class FlyingShoes(Wearable):
     def put_on(self):
         super(FlyingShoes, self).put_on()
         self.flying = True
+
+print(Rope)

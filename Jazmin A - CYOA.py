@@ -17,8 +17,22 @@ class Item(object):
     def pick_up_item(self):
         print(" You have now picked up a %s " % self.name)
 
-    def drop_item(self):
+    def drop_item(self, person):
         print("%d has been dropped", self.name)
+
+        drop = False
+        item_wanted = item
+        for item_wanted in person.inventory:
+            if item.name.lower() == item_requested.lower():
+                drop = True
+                person.inventory.remove(item)
+                current_node.inventory.append(item)
+
+                # player.drop(item)
+                # drop(item_requested)
+
+        if not drop:
+            print("You can't drop it")
 
 
 class Weapon(Item):
@@ -153,7 +167,6 @@ class Character(object):
         self.inventory.append(item)
         item.pick_up_item()
 
-
     def attack(self, target):
         print("%s attacks %s for %d damage" % (self.name, target.name, self.damage))
         target.take_damage(self.damage)
@@ -164,16 +177,9 @@ class Character(object):
             self.death = True
             print("You died")
 
-
-class Chest(Item):
-    def __init__(self):
-        super(Chest, self).__init__("Chest", "Old big dirty chest", 30, 70,)
-
-    def open_chest(self):
-        print("%d has open", self.name)
-
-    def take_item(self):
-        print("item is out of the %s" % self.name)
+    def drop_item(self, item):
+        print("you have drop %s" % self.name)
+        player.drop_item(item_requested)
 
 
 class Room(object):
@@ -258,7 +264,7 @@ Inside_House = Room("Inside House", None, "Swimming_pool", "South_of_Garden", "l
                     " floor.",
                     [Lens])
 
-Swimming_pool = Room("Indoor Pool", None, None, "Staircase", "Big Bathroom", None, "Bedroom", None, None, None, "Big"
+Swimming_pool = Room("Indoor Pool", None, None, "Staircase", "Big Bathroom", None, "Bedroom", None, None, None, "Big "
                      "rectangular pool with crystal water, the bottom can not be seen because of its deepness, inside"
                      " the pool there are infinite steps leading down to the bottom of the pool (if there is a bottom.")
 
@@ -329,8 +335,8 @@ def take(item_requested):
         if item.name.lower() == item_requested.lower():
             # print("taken")
             found = True
-            Room.inventory.remove(item_requested)
-            Character.iventory.append(item_requested)
+            current_node.inventory.remove(item)
+
             player.pick_up(item)
 
     if not found:
@@ -372,11 +378,13 @@ while True:
     elif "take" in command:
         item_requested = command[5:]
         take(item_requested)
+
     elif "pick up" in command:
         item_requested = command[8:]
         take(item_requested)
+        print("Would you like to drop the item?")
+        if "yes" in command:
+            print()
+
     else:
         print("Command not recognized")
-
-
-# .remove item
