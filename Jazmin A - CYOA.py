@@ -220,18 +220,30 @@ kitchen = Room("Kitchen", "Old Room", None, None, "Living", "Garden", None, None
                "surprisingly most of the drawers are full with can tomato sauce, underneath the drawers there is"
                " a silver sink. To the west there is a  big clear door leading to the garden", [knife, Tomato_sauce])
 
-West_of_Garden = Room("Garden", None, "West_of_Garden", "West_of_Garden", "Antique Art Room", "Dangerous_Forest",
-                      "South_of_Garden", "Road", "North_Garden", "Forest", " You are west of the House, there is green"
-                      " grass all over, colorful flowers are starting to bloom.")
+West_of_Garden = Room("West of garden", None, "West_of_Garden", "West_of_Garden", "Antique Art Room",
+                      "Dangerous_Forest", "South_of_Garden", "Road", "North_Garden", "Forest", " You are now west of "
+                      "the House, there is green grass all over the place.")
 
-# Road = Room("Road", None, "")
-# Dangerous_Forest = Room("Dangerous Forest", None, "")
+Road = Room("The Road", None, "West_of_Garden", "Dangerous Forest", "Front of House", "Dangerous Forest",
+            "Dangerous Forest", "Road", "Back of house", "Dangerous Forest", "The Road is the only way to get out of"
+            " the house into a safe place. If you decide to take this path you will never be able to return back "
+            "into the house. If you are ready to end this game pleas type SOUTHWEST!!! . If you don't follow directions"
+            "game will not end.")
+
+Dangerous_Forest = Room("Dangerous Forest", None, None, None, None, None, None, None, None, None, "It is preferable "
+                        "that you exist the forest")
+
 # Old_Room = Room("Old Room", None )
 
-South_of_Garden = Room("Front of House", 'Second_Floor', "Inside_House", "Dangerous Forest", "Living Room", None,
-                       None, None, None, None, "Black two story house, with two white windows in front.")
+South_of_Garden = Room("Front of House", 'Second_Floor', "Inside_House", "Dangerous Forest", "Front of House", "Road",
+                       "Dangerous Forest", "Dangerous Forest", None, None, "You look up and down the house face. It is "
+                       "dilapidated with curls of paint peeling off and falling to the ground. Ivy clings to the walls "
+                       "and most of it is withered away. As you step around, there is the soft crunching of dead leaves"
+                       " turning the floor into a mosaic of yellows, oranges, and reds. Around the house The Heavy "
+                       "Forest dominates.")
 
-Art_Room = Room("Art Room", None, None, None, "Garden", None, None, None, None, None,
+
+Art_Room = Room("Art Room", None, None, "Garden", None, None, None, None, None,
                 "To the east there is a brick wall, which has no exist. In the middle of the room there is"
                 " an art stand with some dry paints by the side", [sword])
 
@@ -337,6 +349,12 @@ while True:
         for item in current_node.inventory:
             print(item.name)
 
+    if current_node == Road:
+        print()
+        if "SOUTHWEST" in input():
+            print("Game Over!!!")
+            quit(0)
+
     # Asks for input
     command = input('>_').lower().strip()
     if command == 'quit':
@@ -360,7 +378,16 @@ while True:
 
     elif "pick up" in command:
         item_requested = command[8:]
-        take(item_requested)
+
+        for item in current_node.inventory:  # Go through every item
+            if item.name == item_requested:  # and see if it matches the name of the item you are looking for
+                take(item)
+                if isinstance(item, Consumable):  # If that item object is a consumable
+                    player.eat()  # Eat it.
+                    print("You have eaten ")
+                    print(player.health)
+                elif isinstance(item, Drinkable):
+                    player.drink()
 
     elif "drop" in command:
         item_wanted = command[5:]

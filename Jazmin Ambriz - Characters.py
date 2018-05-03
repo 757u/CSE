@@ -40,8 +40,9 @@ class Character(object):
             print("You died")
 
 
-player = Character("Player", "You", 100, False, 20)
+player = Character("Player", "You", 100, False)
 enemy = Character("Enemy", "It's a bad guy", 100, False, 10)
+
 player.attack(enemy)
 enemy.attack(player)
 print(player.health)
