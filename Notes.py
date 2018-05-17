@@ -8,13 +8,11 @@
 # print(3 * 5)
 # print(6 / 2)
 # print(3 ** 2)
-
 # print()
 # print("Try to figure out how this works")
 # print(14 % 5)
-
 # the "%" sign is a modulus. It finds the reminder.
-# #
+
 # # car_name = "Wibe Mobile"
 # # car_type = "BW"
 # # car_cylinder = 8
@@ -148,7 +146,8 @@
 # print(len(the_count))
 
 # # Going through lists
-# for item in cheesburger_ingredients:      # for loops are used when you the exact number of time that something is going through
+# for item in cheesburger_ingredients:      # for loops are used when you the exact number of time that something is
+# going through
 #     print(item)
 #
 # for number in the_count:
@@ -218,15 +217,15 @@
 # dictionary["proffesion"] = "telemarketer"
 
 # large_dictionary = {
-    # 'CA': 'California',
-    # 'AZ': 'Arizona',
-    # 'NY': 'New York'
+# 'CA': 'California',
+# 'AZ': 'Arizona',
+# 'NY': 'New York'
 # }
 # print(large_dictionary['NY'])
 # larger_dictionary = {
-    # 'CA': 'California',
-    # 'AZ': 'Arizona',
-    # 'NY': 'New York'
+# 'CA': 'California',
+# 'AZ': 'Arizona',
+# 'NY': 'New York'
 # }
 # print(large_dictionary['NY'])
 
@@ -238,7 +237,7 @@ larger_dictionary = {
         "San Jose"
 
     ],
-    'Az':[
+    'Az': [
         "Phoenix",
         "TusCon"
     ],
@@ -250,10 +249,10 @@ larger_dictionary = {
 print(larger_dictionary['NY'])
 print(larger_dictionary['NY'][1])
 print(larger_dictionary)
-print(larger_dictionary ['Az'][0])
+print(larger_dictionary['Az'][0])
 
 largest_dictionary = {
-    'CA':{
+    'CA': {
         'NAME': 'California',
         'POPULATION': 39250000,
         'BORDER ST': [
@@ -263,7 +262,7 @@ largest_dictionary = {
 
         ]
     },
-    'AZ':{
+    'AZ': {
         'NAME': 'Arizona',
         'POPULATION': 6931000,
         'BORDER ST': [
@@ -273,7 +272,7 @@ largest_dictionary = {
             'New Mexico',
         ]
     },
-    'NY':{
+    'NY': {
         'NAME': "New York",
         'POPULATION': 19750000,
         'BORDER ST': [
@@ -289,7 +288,3 @@ largest_dictionary = {
 
 current_node = largest_dictionary['NY']
 print(current_node['POPULATION'])
-
-
-
-
