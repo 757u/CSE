@@ -179,7 +179,7 @@ class Character(object):
         self.health -= damage
         if self.health <= 0:
             self.death = True
-            print("You died")
+            print("You have killed %s", self.name)
 
 
 player = Character("Player", "You", 100, False, 20)
@@ -234,16 +234,16 @@ book = Book("Magical Book", "This book looks very old, on the top of it there is
 Pen = Pen("Dip Pen", "Wood Dip pen", 5, 1)
 Rope = Rope("Rope", "White long rope", 10, 10)
 key = Key("Key", "Very small gold key", 80, 1)
-FlyingShoes = FlyingShoes()
+FlyingShoes = FlyingShoes
 
 
 living = Room("Living Room", None, None, "Bedroom", None, None, "Staircase_fir", None, None, None, None, "The walls"
               " of the room are covered by yellow wall paper. In the east wall there is a big white window, through the"
               " window you can observe the green grass. In  the room there are four leather couches. In the south wall "
-              "there is a gigantic television", [Character("Goblins", "It's a bad guy", 100, False, 10),
-                                                 Character("Goblins", "It's a bad guy", 100, False, 10),
-                                                 Character("Goblins", "It's a bad guy", 100, False, 10),
-                                                 Character("Goblins", "It's a bad guy", 100, False, 10)],
+              "there is a gigantic television", [Character("Goblin", "It's a bad guy", 100, False, 10),
+                                                 Character("Goblin", "It's a bad guy", 100, False, 10),
+                                                 Character("Goblin", "It's a bad guy", 100, False, 10),
+                                                 Character("Goblin", "It's a bad guy", 100, False, 10)],
                                                  [Water_bottle])
 
 
@@ -285,7 +285,7 @@ Art_Room = Room("Art Room", None, None, None, None, "Garden", None, None, None, 
                 "To the east there is a brick wall, which has no exist. In the middle of the room there is"
                 " an art stand with some dry paints by the side", [sword], None)
 
-Inside_House = Room("Inside House", None, None, "Swimming_pool", "South_of_Garden", "living", "Kitchen",
+Inside_House = Room("Inside House", None, None, "Swimming_pool", "South_of_Garden", "living", "kitchen",
                     "South_of_Garden", "South_of_Garden", "Bedroom", "Art_Room", "You are inside a two story house; "
                     "standing at the beginning of a corridor. Around you there are different rooms and doors leading"
                     " to the yet unknown. To the side a bit to the east there is a fancy staircase leading to the "
@@ -382,7 +382,7 @@ short_directions = ['n', 's', 'e', 'w', 'se', 'sw', 'ne', 'nw', 'u', 'd']
 while True:
     # Room Information
     print(player.location.name)
-    if len(player.location.characters) > 0:
+    if player.location.characters is not None and len(player.location.characters) > 0:
         if player.lens is False:
             print("You sense a presence.")
         elif len(player.location.characters) == 1:
@@ -392,7 +392,6 @@ while True:
             print("___________________________________________________________________________________________________")
 
     print(player.location.description)
-
 
     if player.location.inventory is not None and len(player.location.inventory) > 0:
         print()
@@ -427,10 +426,51 @@ while True:
     elif "take" in command:
         item_requested = command[5:]
         take(item_requested)
+        for item in player.inventory:  # Go through every item
+            if item.name.lower() == item_requested.lower():  # and see if it matches the name of the item u are looking
+                if isinstance(item, Drinkable):
+                    command2 = input("Would you like to drink it?")
+                    if command2.lower() in ['y', 'yes']:
+                        item.drink()
+                        print("You have drunk the beverage")
+                        print("You're health is:")
+                        player.health += 5
+                        print(player.health)
+                        print("______________________________________________________________________________________")
+                        print()
+
+                elif isinstance(item, Consumable):  # If that item object is a consumable
+                    command2 = input("Would you like to eat it?")
+                    if command2.lower() in ['y', 'yes']:
+                        player.eat()  # Eat it.
+                        print("You have eaten ")
+                        player.health += 5
+                        print(player.health)
 
     elif "pick up" in command:
         item_requested = command[8:]
         take(item_requested)
+        for item in player.inventory:  # Go through every item
+            if item.name.lower() == item_requested.lower():  # and see if it matches the name of the item u are looking
+                if isinstance(item, Drinkable):
+                    command2 = input("Would you like to drink it?")
+                    if command2.lower() in ['y', 'yes']:
+                        item.drink()
+                        print("You have drunk the beverage")
+                        print("You're health is:")
+                        player.health += 5
+                        print(player.health)
+                        print("______________________________________________________________________________________")
+                        print()
+
+                elif isinstance(item, Consumable):  # If that item object is a consumable
+                    command2 = input("Would you like to eat it?")
+                    if command2.lower() in ['y', 'yes']:
+                        player.eat()  # Eat it.
+                        print("You have eaten ")
+                        player.health += 5
+                        print(player.health)
+
     elif "drink" in command:
         item_requested = command[6:]
         for item in player.inventory:  # Go through every item
@@ -472,21 +512,23 @@ while True:
     elif command == 'use lens':
         player.use_lens()
 
-    if "attack" in command:
-        human = command[6:]
+    elif "attack" in command:
+        human = command[7:]
+        character_to_remove = None
         for stuff in player.location.characters:
-            if human == stuff.name:
+            if stuff.name.lower() in human.lower():
                 if isinstance(stuff, Character):
                     player.attack(stuff)
+                    print("KABOOM!!!!!!!!!")
+                    if stuff.health <= 0:
+                        character_to_remove = stuff
+        if character_to_remove is not None:
+            player.location.characters.remove(character_to_remove)
 
-        else:
-            print("Command not recognized")
-
+    else:
+        print("Command not recognized")
 
      # TO DO LIST:
-        # PUT ALL CHARACTERS IN ROOMS
-        # MAKE THE DEF OF ATTACK AND DAMAGE WORK
         # MAKE IT SO YOU CAN FIND THE KEY AND THEN BE ABLE TO OPEN CHEST
         # Make a friend that can talk and lead the player
         # IF yOU PUT FLYING SHOES YOU DIE BECAUSE YOU DONT KNOW HOW TO FLY
-
