@@ -20,7 +20,7 @@
       <file leaf-file-name="Jazmin Ambriz- Characters(google.classroom).py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Jazmin Ambriz- Characters(google.classroom).py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="221">
               <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
               <folding />
             </state>
@@ -50,8 +50,8 @@
       <file leaf-file-name="Jazmin A - CYOA.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Jazmin A - CYOA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="399" column="0" lean-forward="false" selection-start-line="399" selection-start-column="0" selection-end-line="399" selection-end-column="0" />
+            <state relative-caret-position="-2375">
+              <caret line="382" column="11" lean-forward="true" selection-start-line="382" selection-start-column="11" selection-end-line="382" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -60,7 +60,7 @@
       <file leaf-file-name="Extra Copy of  - CYOA.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Extra Copy of  - CYOA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
+            <state relative-caret-position="510">
               <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
@@ -79,6 +79,9 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>living</find>
+      <find>main</find>
+      <find>Chest</find>
+      <find>chest</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -321,7 +324,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280757" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4400631" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07097792" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22986823" sideWeight="0.5093897" order="2" side_tool="true" content_ui="tabs" />
@@ -682,7 +685,7 @@
     <entry file="file://$PROJECT_DIR$/Items.py" />
     <entry file="file://$PROJECT_DIR$/Jazmin Ambriz- Characters(google.classroom).py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="221">
           <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
           <folding />
         </state>
@@ -692,13 +695,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="39" column="12" lean-forward="false" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Extra Copy of  - CYOA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
+        <state relative-caret-position="510">
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
@@ -706,8 +708,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Jazmin A - CYOA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="399" column="0" lean-forward="false" selection-start-line="399" selection-start-column="0" selection-end-line="399" selection-end-column="0" />
+        <state relative-caret-position="-2375">
+          <caret line="382" column="11" lean-forward="true" selection-start-line="382" selection-start-column="11" selection-end-line="382" selection-end-column="11" />
           <folding />
         </state>
       </provider>

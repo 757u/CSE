@@ -90,8 +90,8 @@ class Chest(Item):
     def __init__(self):
         super(Chest, self).__init__("Chest", "Old big dirty chest", 30, 70)
 
-    def open_chest(self):
-        print("%d has open", self.name)
+    def open_chest(self, character):
+        print("%s has opened by %s" % (self.name, character.name))
 
     def take_item(self):
         print("item is out of the %s" % self.name)
@@ -234,6 +234,7 @@ book = Book("Magical Book", "This book looks very old, on the top of it there is
 Pen = Pen("Dip Pen", "Wood Dip pen", 5, 1)
 Rope = Rope("Rope", "White long rope", 10, 10)
 key = Key("Key", "Very small gold key", 80, 1)
+chest = Chest("Chest", "its a big chest", 3, 20)
 FlyingShoes = FlyingShoes
 
 
@@ -283,7 +284,7 @@ South_of_Garden = Room("Front of House", 'Second_Floor', None, "Inside_House", "
 
 Art_Room = Room("Art Room", None, None, None, None, "Garden", None, None, None, None, None,
                 "To the east there is a brick wall, which has no exist. In the middle of the room there is"
-                " an art stand with some dry paints by the side", [sword], None)
+                " an art stand with some dry paints by the side", [sword, key], None)
 
 Inside_House = Room("Inside House", None, None, "Swimming_pool", "South_of_Garden", "living", "kitchen",
                     "South_of_Garden", "South_of_Garden", "Bedroom", "Art_Room", "You are inside a two story house; "
@@ -346,7 +347,7 @@ Special_Room = Room("Second Floor's Main Bedroom", None, None, None, "Second_Flo
                     "there is a bed, some lamps by the sides, books on the floor. To the north wall there is an open"
                     "window. But then you notice one of the weirdest things; part of the floor is glass allowing you to"
                     " see down and take a look at the pool. You are not sure if the glass is very stable.", None,
-                    [Chest, Key])
+                    [Chest])
 
 Gym = Room("Gym", None, "Back Gym wall", "Waiting_Room", "Special_Room", "Waiting Room", "Library",
            "Waiting Room", None, "Gym", "The gym is weird shaped. It is found at the northwest corner of the house. "
@@ -381,6 +382,8 @@ short_directions = ['n', 's', 'e', 'w', 'se', 'sw', 'ne', 'nw', 'u', 'd']
 
 while True:
     # Room Information
+    print("For help type: '?' or 'help'.")
+    print()
     print(player.location.name)
     if player.location.characters is not None and len(player.location.characters) > 0:
         if player.lens is False:
@@ -501,6 +504,9 @@ while True:
             print("You can't drop it")
         print()
 
+    elif "help" or "?" in command:
+        print("To mve type: south, east, north, west")
+
     elif command == 'inventory':
         print("You're inventory is:")
         item_number = 1
@@ -524,6 +530,16 @@ while True:
                         character_to_remove = stuff
         if character_to_remove is not None:
             player.location.characters.remove(character_to_remove)
+
+    elif 'open chest with key' in command:
+        if player.inventory == key:
+            for thing in player.inventory:
+                if isinstance(thing, Key):
+                    Chest.open_chest(chest, player)
+                    player.pick_up(book)
+
+        else:
+            print("Key is not in your inventory.")
 
     else:
         print("Command not recognized")
