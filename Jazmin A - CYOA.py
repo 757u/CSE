@@ -179,7 +179,7 @@ class Character(object):
         self.health -= damage
         if self.health <= 0:
             self.death = True
-            print("You have killed %s", self.name)
+            print("You have killed %s" % self.name)
 
 
 player = Character("Player", "You", 100, False, 20)
@@ -253,7 +253,7 @@ kitchen = Room("Kitchen", None, None, None, None, "Staircase_fir", "West_of_Gard
                " drawers there is a silver sink. To the west there is a  big clear door leading to the garden", None,
                [knife, Tomato_sauce])
 
-West_of_Garden = Room("West of garden", None, None, "Antique Art Room", "West_of_Garden", "kitchen", None,
+West_of_Garden = Room("West of garden", None, None, "Antique_Art_Room", "West_of_Garden", "kitchen", None,
                       "Dangerous_Forest", "South_of_Garden", "Road", "North_Garden", " You are now west of "
                       "the House, there is green grass all over the place.", [Character("troll", "", 100, False,
                                                                               20)], None)
@@ -261,18 +261,27 @@ Antique_Art_Room = Room("Antique Art Room", None, None, None, None, None, "West_
                         "This room feels humid, and it's pretty dark. You're shoe is covered with a red substance, "
                         "don't worry its just fresh paint. It seems like this room was used for painting. In the "
                         "northwest corner you can see a shine of light slipping in. To the east of the room there is an"
-                        "unbreakable brick wall. You only have TWO exists: the way you came in, and the hole in the "
+                        " unbreakable brick wall. You only have TWO exists: the way you came in, and the hole in the "
                         "northwest corner.", None, None)
 
-Corner = Room("Corner of the Antique Room", None, None, "Old Room", "Antique_Art_Room", "Antique_Art_Room",
-              "Antique_Art_Room", None, "West_of_Garden", "Small corridor", None, "If you go the right direction you"
+Corner = Room("Corner of the Antique Room", None, None, "Old_room", "Antique_Art_Room", "Antique_Art_Room",
+              "Antique_Art_Room", None, "West_of_Garden", "Small corridor", None, "If you go the right direction you "
               "will pass through the hole in the corner which will lead you to a room, or a corridor. "
               "Hint: In order to win the game it is necessary to get to the room that the corner will lead you to.",
               None, None)
 
-Old_room = Room("Old Room", )
+Old_room = Room("Old Room", None, None, None, None, None, None, None, "Small_corridor", None, None, "This room is "
+                "close from any outside vision. It does have a door, but the door is locked. The only opening "
+                "there is is the small hole in the southwest corner. In the middle of this empty dark room there is a "
+                "mannequin. The mannequin is cloth less, but it does have something that grabs you're attention: it has"
+                " a necklace that has a key on it.", None, [key])
 
-Small_corridor = Room("Small corridor")
+
+Small_corridor = Room("Small corridor", None, None, "Old_room", "Antique_Art_Room", "Front_of_House", None, None,
+                      "West_of_Garden", None, None, "Once you go through the hole of the Antique art room you land here"
+                      ": in this corridor. This corridor is very tight and small that you have to walk sideways in "
+                      "order to fit.", [Character("Goblin", "Short ugly creature with a red and yellow eye. This goblin"
+                                        " doesn't have any hair", 100, False, 10)])
 
 Road = Room("The Road", None, None, "West_of_Garden", "Dangerous Forest", "Front of House", "Dangerous Forest",
             "Dangerous Forest", "Road", "Back of house", "Dangerous Forest", "The Road is the only way to get out of"
@@ -308,7 +317,7 @@ Inside_House = Room("Inside House", None, None, "Swimming_pool", "South_of_Garde
                     "second floor. This House is fancy, but at the same time it is very old.", [],
                     [Lens])
 
-Swimming_pool = Room("Indoor Pool", None, None, None, "Inside House", None, "Big Bathroom", None, "Bedroom", None,
+Swimming_pool = Room("Indoor Pool", None, None, None, "Inside_House", None, "Big Bathroom", None, "Bedroom", None,
                      None, "Big rectangular pool with crystal water, the bottom can not be seen because of its "
                      "deepness, inside the pool there are infinite steps leading down to the bottom of the pool "
                      "(if there is a bottom.)", [Character("Goblins", "Bad ugly creature", 100, False, 10)], None)
