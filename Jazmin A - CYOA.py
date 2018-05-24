@@ -49,7 +49,7 @@ class Drinkable(Consumable):
         super(Drinkable, self).__init__(name, description, value, weight)
 
     def drink(self):
-        print(" That %s was good!" % self.name)
+        print(" That %s was helpful!" % self.name)
     
 
 class Potions(Consumable):
@@ -87,8 +87,8 @@ class Key(Item):
 
 
 class Chest(Item):
-    def __init__(self):
-        super(Chest, self).__init__("Chest", "Old big dirty chest", 30, 70)
+    def __init__(self, name, description, value, weight):
+        super(Chest, self).__init__(name, description, value, weight)
 
     def open_chest(self, character):
         print("%s has opened by %s" % (self.name, character.name))
@@ -234,7 +234,7 @@ book = Book("Magical Book", "This book looks very old, on the top of it there is
 Pen = Pen("Dip Pen", "Wood Dip pen", 5, 1)
 Rope = Rope("Rope", "White long rope", 10, 10)
 key = Key("Key", "Very small gold key", 80, 1)
-chest = Chest("Chest", "its a big chest", 3, 20)
+chest = Chest("Chest", "Old big dirty chest. Inside of the chest there is a book.", 30, 70)
 FlyingShoes = FlyingShoes
 
 
@@ -244,8 +244,7 @@ living = Room("Living Room", None, None, "Bedroom", None, None, "Staircase_fir",
               "there is a gigantic television", [Character("Goblin", "It's a bad guy", 100, False, 10),
                                                  Character("Goblin", "It's a bad guy", 100, False, 10),
                                                  Character("Goblin", "It's a bad guy", 100, False, 10),
-                                                 Character("Goblin", "It's a bad guy", 100, False, 10)],
-                                                 [Water_bottle])
+                                                 Character("Goblin", "It's a bad guy", 100, False, 10)], [Water_bottle])
 
 
 kitchen = Room("Kitchen", None, None, None, None, "Staircase_fir", "West_of_Garden", None, None, None, None,
@@ -254,10 +253,26 @@ kitchen = Room("Kitchen", None, None, None, None, "Staircase_fir", "West_of_Gard
                " drawers there is a silver sink. To the west there is a  big clear door leading to the garden", None,
                [knife, Tomato_sauce])
 
-West_of_Garden = Room("West of garden", None, None, None, "West_of_Garden", "kitchen", "Antique Art Room",
+West_of_Garden = Room("West of garden", None, None, "Antique Art Room", "West_of_Garden", "kitchen", None,
                       "Dangerous_Forest", "South_of_Garden", "Road", "North_Garden", " You are now west of "
-                      "the House, there is green grass all over the place.", None, [Character("troll", "", 100, False,
-                                                                                    20)])
+                      "the House, there is green grass all over the place.", [Character("troll", "", 100, False,
+                                                                              20)], None)
+Antique_Art_Room = Room("Antique Art Room", None, None, None, None, None, "West_of_Garden", None, None, None, "Corner",
+                        "This room feels humid, and it's pretty dark. You're shoe is covered with a red substance, "
+                        "don't worry its just fresh paint. It seems like this room was used for painting. In the "
+                        "northwest corner you can see a shine of light slipping in. To the east of the room there is an"
+                        "unbreakable brick wall. You only have TWO exists: the way you came in, and the hole in the "
+                        "northwest corner.", None, None)
+
+Corner = Room("Corner of the Antique Room", None, None, "Old Room", "Antique_Art_Room", "Antique_Art_Room",
+              "Antique_Art_Room", None, "West_of_Garden", "Small corridor", None, "If you go the right direction you"
+              "will pass through the hole in the corner which will lead you to a room, or a corridor. "
+              "Hint: In order to win the game it is necessary to get to the room that the corner will lead you to.",
+              None, None)
+
+Old_room = Room("Old Room", )
+
+Small_corridor = Room("Small corridor")
 
 Road = Room("The Road", None, None, "West_of_Garden", "Dangerous Forest", "Front of House", "Dangerous Forest",
             "Dangerous Forest", "Road", "Back of house", "Dangerous Forest", "The Road is the only way to get out of"
@@ -293,7 +308,7 @@ Inside_House = Room("Inside House", None, None, "Swimming_pool", "South_of_Garde
                     "second floor. This House is fancy, but at the same time it is very old.", [],
                     [Lens])
 
-Swimming_pool = Room("Indoor Pool", None, None, None, None, "Inside_House", "Big Bathroom", None, "Bedroom", None,
+Swimming_pool = Room("Indoor Pool", None, None, None, "Inside House", None, "Big Bathroom", None, "Bedroom", None,
                      None, "Big rectangular pool with crystal water, the bottom can not be seen because of its "
                      "deepness, inside the pool there are infinite steps leading down to the bottom of the pool "
                      "(if there is a bottom.)", [Character("Goblins", "Bad ugly creature", 100, False, 10)], None)
@@ -347,7 +362,7 @@ Special_Room = Room("Second Floor's Main Bedroom", None, None, None, "Second_Flo
                     "there is a bed, some lamps by the sides, books on the floor. To the north wall there is an open"
                     "window. But then you notice one of the weirdest things; part of the floor is glass allowing you to"
                     " see down and take a look at the pool. You are not sure if the glass is very stable.", None,
-                    [Chest])
+                    [chest])
 
 Gym = Room("Gym", None, "Back Gym wall", "Waiting_Room", "Special_Room", "Waiting Room", "Library",
            "Waiting Room", None, "Gym", "The gym is weird shaped. It is found at the northwest corner of the house. "
@@ -504,7 +519,7 @@ while True:
             print("You can't drop it")
         print()
 
-    elif "help" or "?" in command:
+    elif "help" in command or "?" in command:
         print("To mve type: south, east, north, west")
 
     elif command == 'inventory':
@@ -532,19 +547,19 @@ while True:
             player.location.characters.remove(character_to_remove)
 
     elif 'open chest with key' in command:
-        if player.inventory == key:
-            for thing in player.inventory:
-                if isinstance(thing, Key):
-                    Chest.open_chest(chest, player)
-                    player.pick_up(book)
-
+        if key in player.inventory:
+            if player.location == Special_Room:
+                Chest.open_chest(chest, player)
+                player.pick_up(book)
+            else:
+                print("There is no chest here")
         else:
             print("Key is not in your inventory.")
 
     else:
         print("Command not recognized")
 
-     # TO DO LIST:
+        # TO DO LIST:
         # MAKE IT SO YOU CAN FIND THE KEY AND THEN BE ABLE TO OPEN CHEST
         # Make a friend that can talk and lead the player
         # IF yOU PUT FLYING SHOES YOU DIE BECAUSE YOU DONT KNOW HOW TO FLY
